@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Levy Fan Membership Card Generator</title>
+    <title>Park Ji-Min - Official Fan Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://formspree.io;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        img-src 'self' data: https:;
+        font-src 'self' https://cdnjs.cloudflare.com;
+        connect-src 'self' https://formspree.io;
+        frame-ancestors 'none';
+        form-action 'self' https://formspree.io;
+    ">
+    
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-ProtectiSorry about that, but why didn't he pay attention to you? 
+Isn't the story interesting?on" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+    
     <style>
         * {
             margin: 0;
@@ -11,941 +32,2656 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+        }
+
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-color: #f8f9fa;
             color: #333;
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            line-height: 1.6;
         }
-        
+
         .container {
-            max-width: 1200px;
             width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #4a90e2;
+            object-fit: cover;
+        }
+    
+        .header-content {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .form-container, .preview-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
-        
-        .preview-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
-        
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            color: #b21f1f;
-            margin-bottom: 20px;
-            text-align: center;
-            border-bottom: 2px solid #fdbb2d;
-            padding-bottom: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #1a2a6c;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus, select:focus {
-            border-color: #1a2a6c;
-            outline: none;
-        }
-        
-        .file-input-group {
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+    
+        .logo i {
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 17px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .language-selector {
+            position: relative;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            gap: 5px;
+        }
+        
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            padding: 10px 0;
+            margin-top: 5px;
+        }
+        
+        .language-dropdown a {
+            display: block;
+            padding: 8px 15px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .language-dropdown a:hover {
+            background: #f0f0f0;
+        }
+        
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        
+        .auth-buttons {
+            display: flex;
             gap: 10px;
         }
         
-        .file-input-label {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 8px;
+        .btn {
+			background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: none;
             cursor: pointer;
-            text-align: center;
-            border: 2px dashed #ccc;
+            font-weight: 500;
             transition: all 0.3s;
         }
         
-        .file-input-label:hover {
-            background: #e0e0e0;
-            border-color: #1a2a6c;
-        }
-        
-        .file-input {
-            display: none;
-        }
-        
-        .signature-preview {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        
-        .signature-box {
-            width: 45%;
-            text-align: center;
-        }
-        
-        .signature-img {
-            width: 100%;
-            height: 60px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 5px;
-            overflow: hidden;
-        }
-        
-        .signature-img img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        button {
-            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
             color: white;
-            border: none;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 100%;
-            margin-top: 10px;
         }
         
-        button:hover {
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #c62828;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/williamgutierrezlevy58-eng/williamlevyofficialplatform/main/willevy.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .hero .btn:hover {
+            background: #c0392b;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
-        .card-container {
-            width: 350px;
-            height: 500px;
-            perspective: 1000px;
-            margin-bottom: 15px;
+
+        .btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-        
-        .card {
-            width: 100%;
-            height: 100%;
+
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+            font-size: 36px;
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s;
-            cursor: pointer;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
+            padding-bottom: 15px;
         }
-        
-        .card.flipped {
-            transform: rotateY(180deg);
-        }
-        
-        .card-front, .card-back {
+
+        .section-title:after {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
         }
-        
-        .card-front {
-            background: linear-gradient(135deg, #0c2461, #1e3799, #4a69bd);
-            color: white;
-            padding: 30px;
-            text-align: center;
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
-        
-        .card-back {
+
+        .product-card {
             background: white;
-            color: #333;
-            transform: rotateY(180deg);
-            padding: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
-        
-        .card-header {
-            text-align: center;
-            margin-bottom: 20px;
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-        
-        .card-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .card-subtitle {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        
-        .card-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .member-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            border: 3px solid white;
+
+        .product-image {
+            height: 200px;
             overflow: hidden;
         }
-        
-        .member-photo img {
+
+        .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
         }
-        
-        .member-name {
-            font-size: 24px;
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
             margin-bottom: 10px;
-            font-weight: bold;
+            color: var(--dark);
         }
-        
-        .member-info {
-            font-size: 16px;
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
             margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
+            font-weight: 500;
+            color: var(--dark);
         }
-        
-        .info-label {
-            font-weight: bold;
-            color: #1a2a6c;
-        }
-        
-        .barcode {
-            height: 80px;
-            background: #f5f5f5;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            overflow: hidden;
+            font-size: 16px;
+            transition: border-color 0.3s;
         }
-        
-        .barcode svg {
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-control.error {
+            border-color: var(--secondary);
+        }
+
+        .error-message {
+            color: var(--secondary);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
         }
-        
-        .signature {
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFade 0.3s;
+        }
+
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
+            align-items: center;
         }
-        
-        .signature-item {
+
+        .modal-header h2 {
+            color: var(--dark);
+            font-size: 24px;
+        }
+
+        .close-modal {
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary);
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .membership-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .membership-option {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
             text-align: center;
-            width: 45%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .membership-option:hover {
+            border-color: var(--accent);
+        }
+
+        .membership-option.selected {
+            border-color: var(--secondary);
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .membership-option h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .membership-option .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
         }
         
-        .signature-rect {
-            height: 60px;
-            background: white;
-            margin-bottom: 5px;
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+            color: var(--primary)
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-        
-        .signature-rect img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .tap-hint {
-            text-align: center;
-            margin: 10px 0;
-            font-style: italic;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             color: white;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px;
-            border-radius: 5px;
-            width: 100%;
+            transition: all 0.3s;
         }
-        
-        .instructions {
-            color: white;
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
             text-align: center;
-            max-width: 800px;
-            margin: 20px auto;
-            background: rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Security Notice */
+        .security-notice {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent);
             padding: 15px;
-            border-radius: 10px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 14px;
         }
-        
-        .save-btn {
-            background: linear-gradient(to right, #00b09b, #96c93d);
-            width: 200px;
+
+        /* Language Switch Button */
+        .lang-switch {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
         }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+            .header-content {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
             }
             
-            .form-container, .preview-container {
-                width: 100%;
-                max-width: 100%;
+            .about-content {
+                flex-direction: column;
             }
         }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        /* Notification System */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            display: none;
+            max-width: 300px;
+        }
+        
+        .notification.error {
+            background: var(--secondary);
+        }
+        
+        /* Formspree Status */
+        .formspree-status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .formspree-status.success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .formspree-status.error {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* Security Badge */
+        .security-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+		 /* Live Chat Widget Styles */
+        .chat-widget-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .chat-widget-button {
+            width: 60px;
+            height: 60px;
+            background: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            transition: background 0.2s;
+        }
+        .chat-widget-button:hover {
+            background: #c0392b;
+        }
+        .chat-widget-box {
+            display: none;
+            flex-direction: column;
+            width: 350px;
+            height: 470px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            overflow: hidden;
+        }
+        .chat-widget-header {
+            background: linear-gradient(to right, #2c3e50, #1a242f);
+            color: #fff;
+            padding: 16px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-widget-header h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .chat-widget-close {
+            cursor: pointer;
+            font-size: 22px;
+        }
+        .chat-widget-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f5f5f5;
+        }
+        .chat-widget-message {
+            max-width: 80%;
+            padding: 10px 16px;
+            border-radius: 17px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        .chat-widget-message.bot {
+            background: #f1f1f1;
+            align-self: flex-start;
+            border-top-left-radius: 4px;
+        }
+        .chat-widget-message.user {
+            background: #3498db;
+            color: #fff;
+            align-self: flex-end;
+            border-top-right-radius: 4px;
+        }
+        .chat-widget-input-bar {
+            display: flex;
+            padding: 12px;
+            border-top: 1px solid #ececec;
+            background: #fff;
+        }
+        .chat-widget-input-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 18px;
+            outline: none;
+            font-size: 15px;
+        }
+        .chat-widget-input-bar button {
+            margin-left: 10px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            padding: 0 16px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chat-widget-input-bar button:hover {
+            background: #c0392b;
+        }
+        .chat-widget-quick-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .chat-widget-quick-question {
+            padding: 7px 12px;
+            background: #f1f1f1;
+            border-radius: 15px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chat-widget-quick-question:hover {
+            background: #e1e1e1;
+        }
+        @media (max-width: 480px) {
+            .chat-widget-box { width: 98vw; right: -6px; }
+		}
     </style>
 </head>
 <body>
-    <h1>William Levy Fan Membership Card</h1>
-    
-    <div class="instructions">
-        <p>Fill in the form to generate a personalized William Levy Fan Membership Card. The card has a flip animation - tap/click to view the back. Use the "Save Card" button to download the card as an HTML file that maintains its animation when shared.</p>
+    <!-- Security Badge -->
+    <div class="security-badge">
+        <i class="fas fa-shield-alt"></i> <span id="secureText">Secure Connection</span>
     </div>
-    
-    <div class="container">
-        <div class="form-container">
-            <h2>Fan Information</h2>
-            <form id="fanForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required placeholder="Enter full name">
+
+    <!-- Language Switch Button -->
+    <div class="lang-switch" id="langSwitch">
+        <i class="fas fa-language"></i> <span id="currentLang">EN</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-star"></i>
+                    <img src="https://raw.githubusercontent.com/williamgutierrezlevy58-eng/williamlevyofficialplatform/main/Logo.jpg" alt="Park Ji-Min Logo" id="logoImage">
+                    <span id="siteTitle">William <span>Levy</span></span>
+                    <i class="fas fa-star"></i>
                 </div>
-                
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <select id="country" required>
-                        <option value="">Select Country</option>
-                        <option value="United States">United States</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Colombia">Colombia</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Fan Photo</label>
-                    <div class="file-input-group">
-                        <label for="photoUpload" class="file-input-label">Choose Fan Photo</label>
-                        <input type="file" id="photoUpload" class="file-input" accept="image/*">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Signatures</label>
-                    <div class="file-input-group">
-                        <label for="williamSignature" class="file-input-label">William Levy Signature</label>
-                        <input type="file" id="williamSignature" class="file-input" accept="image/*">
-                        
-                        <label for="managementSignature" class="file-input-label">Management Signature</label>
-                        <input type="file" id="managementSignature" class="file-input" accept="image/*">
-                    </div>
-                    
-                    <div class="signature-preview">
-                        <div class="signature-box">
-                            <div>William Levy</div>
-                            <div class="signature-img" id="williamPreview">
-                                <span>No signature</span>
-                            </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" id="navHome">Home</a></li>
+                        <li><a href="#about" id="navAbout">About</a></li>
+                        <li><a href="#products" id="navProducts">Products</a></li>
+                        <li><a href="#contact" id="navContact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <button class="language-btn" id="languageBtn">
+                            <i class="fas fa-globe"></i> <span id="currentLangDisplay">EN</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+							<a href="#" onclick="setLanguage('ar')">Arabic</a>
+							<a href="#" onclick="setLanguage('cn')">Chinese</a>
+                            <a href="#" onclick="setLanguage('en')">English</a>
+                            <a href="#" onclick="setLanguage('fr')">French</a>
+                            <a href="#" onclick="setLanguage('de')">German</a>
+							<a href="#" onclick="setLanguage('el')">Greek</a>
+							<a href="#" onclick="setLanguage('it')">Italia</a>
+							<a href="#" onclick="setLanguage('pt')">Portuguese</a>
+							<a href="#" onclick="setLanguage('ru')">Russian</a>
+                            <a href="#" onclick="setLanguage('es')">Spanish</a>
                         </div>
-                        <div class="signature-box">
-                            <div>Management</div>
-                            <div class="signature-img" id="managementPreview">
-                                <span>No signature</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button type="button" id="generateBtn">Generate Membership Card</button>
-            </form>
-        </div>
-        
-        <div class="preview-container">
-            <h2>Card Preview</h2>
-            
-            <div class="card-container">
-                <div class="card" id="membershipCard">
-                    <div class="card-front">
-                        <div class="card-header">
-                            <div class="card-title">WILLIAM LEVY</div>
-                            <div class="card-subtitle">Official Fan Club</div>
-                        </div>
-                        
-                        <div class="card-body">
-                            <div class="member-photo" id="previewPhoto">👤</div>
-                            <div class="member-name" id="previewName">Fan Name</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-back">
-                        <div class="card-header">
-                            <div class="card-title">MEMBERSHIP CARD</div>
-                        </div>
-                        
-                        <div class="card-body">
-                            <div class="member-info">
-                                <span class="info-label">Full Name:</span>
-                                <span id="backName">Fan Name</span>
-                            </div>
-                            
-                            <div class="member-info">
-                                <span class="info-label">Date of Birth:</span>
-                                <span id="backDob">MM/DD/YYYY</span>
-                            </div>
-                            
-                            <div class="member-info">
-                                <span class="info-label">Age:</span>
-                                <span id="backAge">--</span>
-                            </div>
-                            
-                            <div class="member-info">
-                                <span class="info-label">Country:</span>
-                                <span id="backCountry">Country</span>
-                            </div>
-                            
-                            <div class="member-info">
-                                <span class="info-label">Card PIN:</span>
-                                <span id="backPin">XXXX-XXXX</span>
-                            </div>
-                            
-                            <div class="barcode" id="barcodeContainer">
-                                <!-- Barcode will be generated here -->
-                            </div>
-                            
-                            <div class="signature">
-                                <div class="signature-item">
-                                    <div>William Levy</div>
-                                    <div class="signature-rect" id="williamSignaturePreview">
-                                        <span>Signature</span>
-                                    </div>
-                                    <div style="font-size: 12px;">Signature</div>
-                                </div>
-                                <div class="signature-item">
-                                    <div>Management</div>
-                                    <div class="signature-rect" id="managementSignaturePreview">
-                                        <span>Signature</span>
-                                    </div>
-                                    <div style="font-size: 12px;">Signature</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                  
                 </div>
             </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 id="heroTitle1">Welcome To</h1>
+            <h1 id="heroTitle2">Park Ji-Min Official Fan Platform</h1>
+            <p id="heroDescription">Get exclusive access to fan memberships, and meet & greet opportunities with Park Ji-Min himself!</p>
+            <a href="#products" class="btn" id="heroButton">Explore Offers</a>
+        </div>
+    </section>
+
+    <!-- Security Notice -->
+    <div class="container">
+        <div class="security-notice">
+            <strong><i class="fas fa-shield-alt"></i> <span id="securityNoticeTitle">Security Notice:</span></strong> <span id="securityNoticeText">This website uses advanced security measures to protect your data. All form submissions are encrypted and monitored for suspicious activity.</span>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="container">
+        <h2 class="section-title" id="productsTitle">Exclusive Fan Offers</h2>
+        <div class="products">
+            <!-- Fan Membership -->
+            <div class="product-card" onclick="openModal('membershipModal')">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/williamgutierrezlevy58-eng/williamlevyofficialplatform/main/Card.jpg" alt="Park Ji-Min Fan Membership" id="membershipImage">
+                </div>
+                <div class="product-info">
+                    <h3 id="membershipTitle">Fan Membership</h3>
+                    <p id="membershipDescription">Join the exclusive fan club for special perks, discounts, and exclusive content.</p>
+                    <div class="product-price" id="membershipPrice">From $199.99/year</div>
+                    <a class="btn" id="membershipButton">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Meet & Greet -->
+            <div class="product-card" onclick="openModal('meetModal')">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/williamgutierrezlevy58-eng/williamlevyofficialplatform/main/Meet%20and%20greet.jpg" alt="Park Ji-Min Meet & Greet" id="meetImage">
+                </div>
+                <div class="product-info">
+                    <h3 id="meetTitle">Meet & Greet</h3>
+                    <p id="meetDescription">Get the chance to meet with Park Ji-Min personally. A once-in-a-lifetime experience!</p>
+                    <div class="product-price" id="meetPrice">From $499.99</div>
+                    <a class="btn" id="meetButton">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <div class="about-image">
+                <img src="https://raw.githubusercontent.com/williamgutierrezlevy58-eng/williamlevyofficialplatform/main/Williamlevy.jpg" alt="Park Ji-Min" id="aboutImage">
+            </div>
+            <div class="about-text">
+                <h3 id="aboutTitle">About Park Ji-Min</h3>
+                <p id="aboutText1">Park Ji-Min is a Cuban-American actor and model known for his work in telenovelas and Hollywood films. He gained international recognition for his roles in "Triunfo del Amor" and "La Tempestad".</p>
+                <p id="aboutText2">With his charismatic personality and talent, William has amassed a huge global fanbase. This official website is the perfect place for fans to connect, get updates, and access exclusive experiences.</p>
+                <p id="aboutText3">Join thousands of fans worldwide in supporting this incredible artist!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title" id="contactTitle">Subscribe To Our Newsletters</h2>
+        <form id="contactForm" class="modal-body" style="max-width: 800px; margin: 0 auto;" action="https://formspree.io/f/xqayzokg" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_format" value="plain">
+            <input type="hidden" name="_language" value="en">
             
-            <div class="tap-hint">Tap the card to flip and view the back</div>
-            
-            <button class="save-btn" id="saveBtn">Save Membership Card</button>
+            <div class="form-group">
+                <label for="name" id="nameLabel">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required maxlength="100">
+                <div class="error-message" id="nameError">Please enter a valid name (letters and spaces only, max 100 characters)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="emailLabel">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required maxlength="254">
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <!-- Honeypot field for bots -->
+            <div style="display: none;">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1">
+            </div>
+
+            <!-- Formspree Status Message -->
+            <div class="formspree-status" id="formspreeStatus"></div>
+
+            <div class="success-message" id="successMessage">
+                <span id="successText">You Have Successfully Subscribed To Newsletters. Thank You</span>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;" id="contactSubmit">Join Our Newsletters</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 id="footerAboutTitle">About Us</h3>
+                    <p id="footerAboutText">The official Park Ji-Min fan Platform offering exclusive access to memberships, and meet & greet experiences.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 id="footerLinksTitle">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" id="footerHome">Home</a></li>
+                        <li><a href="#about" id="footerAbout">About</a></li>
+                        <li><a href="#products" id="footerProducts">Products</a></li>
+                        <li><a href="#contact" id="footerContact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 id="footerConnectTitle">Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1ADrKnn5mi/" target="_blank" rel="noopener noreferrer" aria-label="Follow Park Ji-Min on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/willylevy29?s=09" target="_blank" rel="noopener noreferrer" aria-label="Follow Park Ji-Min on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/willevy" target="_blank" rel="noopener noreferrer" aria-label="Follow Park Ji-Min on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+						<a href="https://www.tiktok.com/@willlevy29_?_t=ZS-9059tQwjqCX&_r=1"<i class="fab fa-tiktok"></i>
+						</a>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 14px; color: #ccc;" id="footerFollowText">Follow Park Ji-Min on social media for the latest updates!</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p id="copyrightText">&copy; 2025 Park Ji-Min Fan Platform. All rights reserved. | <a href="#" style="color: #ddd;">Privacy Policy</a> | <a href="#" style="color: #ddd;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>      
+    
+    <!-- Membership Modal -->
+    <div id="membershipModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="membershipModalTitle">Fan Membership</h2>
+                <span class="close-modal" onclick="closeModal('membershipModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="membershipForm" action="https://formspree.io/f/xqayzokg" method="POST">
+                    <input type="hidden" name="_subject" value="New Membership Request">
+                    <input type="hidden" name="_format" value="plain">
+                    <input type="hidden" name="_language" value="en">
+                    <input type="hidden" name="form-type" value="Membership Request">
+                    
+                    <p id="membershipSelectText">Select your preferred membership level:</p>
+                    <div class="membership-options">
+                        <div class="membership-option" onclick="selectMembership(this)">
+                            <h3 id="regularFanTitle">Regular Fan</h3>
+                            <p id="regularFanDesc">Basic benefits</p>
+                            <div class="price">$299.99/year</div>
+                            <input type="radio" name="membership-level" value="Regular Fan" style="display: none;" required>
+                        </div>
+                        
+                        <div class="membership-option" onclick="selectMembership(this)">
+                            <h3 id="vipFanTitle">VIP Fan</h3>
+                            <p id="vipFanDesc">Extra benefits</p>
+                            <div class="price">$499.99/year</div>
+                            <input type="radio" name="membership-level" value="VIP Fan" style="display: none;" required>
+                        </div>
+                        
+                        <div class="membership-option" onclick="selectMembership(this)">
+                            <h3 id="vvipFanTitle">VVIP Fan</h3>
+                            <p id="vvipFanDesc">All benefits</p>
+                            <div class="price">$999.99/year</div>
+                            <input type="radio" name="membership-level" value="VVIP Fan" style="display: none;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membershipFullName" id="membershipNameLabel">Full Name</label>
+                        <input type="text" id="membershipFullName" name="fullName" class="form-control" placeholder="Enter your full name" required maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="membershipPhone" id="membershipPhoneLabel">Phone Number</label>
+                        <input type="number" id="membershipPhone" name="phonenumber" class="form-control" placeholder="Enter your phone number" required maxlength="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membershipEmail" id="membershipEmailLabel">Email Address</label>
+                        <input type="email" id="membershipEmail" name="emailAddress" class="form-control" placeholder="Enter your email" required maxlength="254">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fanYear" id="fanYearLabel">What Year Did You Become A Fan</label>
+                        <input type="number" id="fanYear" name="fanYear" class="form-control" placeholder="Enter the year" min="1990" max="2025" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="membershipCountry" id="membershipCountryLabel">Country</label>
+                        <input type="text" id="membershipCountry" name="country" class="form-control" placeholder="Enter your country" required maxlength="150">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membershipAddress" id="membershipAddressLabel">Address</label>
+                        <input type="text" id="membershipAddress" name="address" class="form-control" placeholder="Enter your full address" required maxlength="300">
+                    </div>
+                    
+                    <!-- Honeypot field for bots -->
+                    <div style="display: none;">
+                        <label for="url">URL</label>
+                        <input type="text" id="url" name="url" tabindex="-1">
+                    </div>
+                    
+                    <!-- Formspree Status Message -->
+                    <div class="formspree-status" id="membershipFormspreeStatus"></div>
+                    <div class="success-message" id="membershipSuccessMessage">
+                        <span id="membershipSuccessText">You submitted a request and the management will contact you via email shortly, always check your email for notification from us. Thank you.</span>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;" id="membershipSubmit">Submit Your Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meet & Greet Modal -->
+    <div id="meetModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="meetModalTitle">Meet & Greet</h2>
+                <span class="close-modal" onclick="closeModal('meetModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="meetForm" action="https://formspree.io/f/xqayzokg" method="POST">
+                    <input type="hidden" name="_subject" value="New Meet & Greet Request">
+                    <input type="hidden" name="_format" value="plain">
+                    <input type="hidden" name="_language" value="en">
+                    <input type="hidden" name="form-type" value="Meet & Greet Request">
+                    
+                    <p id="meetSelectText">Select your preferred meet & greet package:</p>
+                    <div class="membership-options">
+                        <div class="membership-option" onclick="selectMeetPackage(this, 'standard')">
+                            <h3 id="standardMeetTitle">Standard Meet & Greet</h3>
+                            <p id="standardMeetDesc">Basic meet & greet experience</p>
+                            <div class="price">$499.99</div>
+                            <input type="radio" name="meetPackage" value="standard" style="display: none;" required>
+                        </div>
+                        
+                        <div class="membership-option" onclick="selectMeetPackage(this, 'photo')">
+                            <h3 id="photoMeetTitle">Photo Experience</h3>
+                            <p id="photoMeetDesc">Includes professional photo session</p>
+                            <div class="price">$999.99</div>
+                            <input type="radio" name="meetPackage" value="photo" style="display: none;" required>
+                        </div>
+                        
+                        <div class="membership-option" onclick="selectMeetPackage(this, 'ultimate')">
+                            <h3 id="ultimateMeetTitle">Ultimate Experience</h3>
+                            <p id="ultimateMeetDesc">VIP treatment with all benefits</p>
+                            <div class="price">$1499.99</div>
+                            <input type="radio" name="meetPackage" value="ultimate" style="display: none;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meetDate" id="meetDateLabel">Select Your Preferred Meeting Date</label>
+                        <input type="date" id="meetDate" name="meetDate" class="form-control" min="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialRequests" id="specialRequestsLabel">Special Requests</label>
+                        <textarea id="specialRequests" name="specialRequests" class="form-control" rows="3" placeholder="Any special requests or requirements" maxlength="1500"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetFanYear" id="meetFanYearLabel">What Year Did You Become A Fan</label>
+                        <input type="number" id="meetFanYear" name="fanYear" class="form-control" placeholder="Enter the year" min="1990" max="2025" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetFullName" id="meetFullNameLabel">Full Name</label>
+                        <input type="text" id="meetFullName" name="fullName" class="form-control" placeholder="Enter your full name" required maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetPhone" id="meetPhoneLabel">Phone Number</label>
+                        <input type="number" id="meetPhone" name="phonenumber" class="form-control" placeholder="Enter your phone number" required maxlength="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meetEmail" id="meetEmailLabel">Email Address</label>
+                        <input type="email" id="meetEmail" name="emailAddress" class="form-control" placeholder="Enter your email" required maxlength="254">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetCountry" id="meetCountryLabel">Country</label>
+                        <input type="text" id="meetCountry" name="country" class="form-control" placeholder="Enter your country" required maxlength="150">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meetAddress" id="meetAddressLabel">Address</label>
+                        <input type="text" id="meetAddress" name="address" class="form-control" placeholder="Enter your full address" required maxlength="300">
+                    </div>
+                    
+                    <!-- Honeypot field for bots -->
+                    <div style="display: none;">
+                        <label for="homepage">Homepage</label>
+                        <input type="text" id="homepage" name="homepage" tabindex="-1">
+                    </div>
+                    
+                    <!-- Formspree Status Message -->
+                    <div class="formspree-status" id="meetFormspreeStatus"></div>
+                    
+                    <div class="success-message" id="meetSuccessMessage">
+                        <span id="meetSuccessText">You submitted a request and the management will contact you via email shortly, always check your email for notification from us. Thank you.</span>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;" id="meetSubmit">Submit Your Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification" id="notification">
+        <span id="notificationText">New request submitted! Check your email for details.</span>
+    </div>
+
+	<!-- Live Chat Widget -->
+    <div class="chat-widget-container">
+        <button class="chat-widget-button" id="chatWidgetButton" aria-label="Open chat">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-widget-box" id="chatWidgetBox" aria-live="polite" aria-label="Live chat box">
+            <div class="chat-widget-header">
+                <h3>Live Support</h3>
+                <span class="chat-widget-close" id="chatWidgetClose" title="Close chat">&times;</span>
+            </div>
+            <div class="chat-widget-messages" id="chatWidgetMessages">
+                <div class="chat-widget-message bot">
+                    Hi! How can I help you today?
+                </div>
+                <div class="chat-widget-quick-questions">
+                    <div class="chat-widget-quick-question" data-question="I need help with my membership purchase">I need help with my membership purchase</div>
+                    <div class="chat-widget-quick-question" data-question="I have issues with Meet & Greet registration">I have issues with Meet & Greet registration</div>
+                </div>
+            </div>
+            <div class="chat-widget-input-bar">
+                <input type="text" id="chatWidgetInput" placeholder="Type your message..." autocomplete="off" aria-label="Type your message">
+                <button id="chatWidgetSend" title="Send"><i class="fas fa-paper-plane"></i></button>
+            </div>
         </div>
     </div>
 
     <script>
+        // Language Support
+        const translations = {
+            en: {
+                // Navigation
+                "navHome": "Home",
+                "navAbout": "About",
+                "navProducts": "Products",
+                "navContact": "Contact",
+                
+                // Hero Section
+                "heroTitle1": "Welcome To",
+                "heroTitle2": "Park Ji-Min Official Fan Platform",
+                "heroDescription": "Get exclusive access to fan memberships, and meet & greet opportunities with Park Ji-Min himself!",
+                "heroButton": "Explore Offers",
+                
+                // Security
+                "secureText": "Secure Connection",
+                "securityNoticeTitle": "Security Notice:",
+                "securityNoticeText": "This website uses advanced security measures to protect your data. All form submissions are encrypted and monitored for suspicious activity.",
+                
+                // Products
+                "productsTitle": "Exclusive Fan Offers",
+                "membershipTitle": "Fan Membership",
+                "membershipDescription": "Join the exclusive fan club for special perks, discounts, and exclusive content.",
+                "membershipPrice": "From $199.99/year",
+                "membershipButton": "Apply Now",
+                "meetTitle": "Meet & Greet",
+                "meetDescription": "Get the chance to meet Park Ji-Min personally. A once-in-a-lifetime experience!",
+                "meetPrice": "From $499.99",
+                "meetButton": "Book Now",
+                
+                // About Section
+                "aboutTitle": "About Park Ji-Min",
+                "aboutText1": "Park Ji-Min is a Cuban-American actor and model known for his work in telenovelas and Hollywood films. He gained international recognition for his roles in 'Triunfo del Amor' and 'La Tempestad'.",
+                "aboutText2": "With his charismatic personality and talent, William has amassed a huge global fanbase. This official website is the perfect place for fans to connect, get updates, and access exclusive experiences.",
+                "aboutText3": "Join thousands of fans worldwide in supporting this incredible artist!",
+                
+                // Contact Form
+                "contactTitle": "Subscribe To Our Newsletters",
+                "nameLabel": "Full Name",
+                "emailLabel": "Email Address",
+                "contactSubmit": "Join Now",
+                "successText": "You Have Successfully Subscribed Our Newsletters. Thank You.",
+                
+                // Footer
+                "footerAboutTitle": "About Us",
+                "footerAboutText": "The official Park Ji-Min fan Platform offering exclusive access to memberships, and meet & greet experiences.",
+                "footerLinksTitle": "Quick Links",
+                "footerHome": "Home",
+                "footerAbout": "About",
+                "footerProducts": "Products",
+                "footerContact": "Contact",
+                "footerConnectTitle": "Connect With Us",
+                "footerFollowText": "Follow Park Ji-Min on social media for the latest updates!",
+                "copyrightText": "© 2025 Park Ji-Min Fan Platform. All rights reserved.",
+                
+                // Membership Modal
+                "membershipModalTitle": "Fan Membership",
+                "membershipSelectText": "Select your preferred membership level:",
+                "regularFanTitle": "Regular Fan",
+                "regularFanDesc": "Basic benefits",
+                "vipFanTitle": "VIP Fan",
+                "vipFanDesc": "Extra benefits",
+                "vvipFanTitle": "VVIP Fan",
+                "vvipFanDesc": "All benefits",
+                "membershipNameLabel": "Full Name",
+                "membershipPhoneLabel": "Phone Number",
+                "membershipEmailLabel": "Email Address",
+                "fanYearLabel": "What Year Did You Become A Fan",
+                "membershipCountryLabel": "Country",
+                "membershipAddressLabel": "Address",
+                "membershipSubmit": "Submit Your Request",
+                "membershipSuccessText": "You submitted a request and the management will contact you via email shortly, always check your email for notification from us. Thank you.",
+                
+                // Meet & Greet Modal
+                "meetModalTitle": "Meet & Greet",
+                "meetSelectText": "Select your preferred meet & greet package:",
+                "standardMeetTitle": "Standard Meet & Greet",
+                "standardMeetDesc": "Basic meet & greet experience",
+                "photoMeetTitle": "Photo Experience",
+                "photoMeetDesc": "Includes professional photo session",
+                "ultimateMeetTitle": "Ultimate Experience",
+                "ultimateMeetDesc": "VIP treatment with all benefits",
+                "meetDateLabel": "Preferred Meeting Date and Time",
+                "specialRequestsLabel": "Special Requests",
+                "meetFanYearLabel": "What Year Did You Become A Fan",
+                "meetFullNameLabel": "Full Name",
+                "meetPhoneLabel": "Phone Number",
+                "meetEmailLabel": "Email Address",
+                "meetCountryLabel": "Country",
+                "meetAddressLabel": "Address",
+                "meetSubmit": "Submit Your Request",
+                "meetSuccessText": "You submitted a request and the management will contact you via email shortly, always check your email for notification from us. Thank you.",
+                
+                // Notification
+                "notificationText": "New request submitted! Check your email for details."
+            },
+            es: {
+                // Navigation
+                "navHome": "Inicio",
+                "navAbout": "Acerca de",
+                "navProducts": "Productos",
+                "navContact": "Contacto",
+                
+                // Hero Section
+                "heroTitle1": "Bienvenido a",
+                "heroTitle2": "Plataforma Oficial de Fans de Park Ji-Min",
+                "heroDescription": "¡Obtén acceso exclusivo a membresías de fanáticos y oportunidades de encuentros con el propio Park Ji-Min!",
+                "heroButton": "Explorar Ofertas",
+                
+                // Security
+                "secureText": "Conexión Segura",
+                "securityNoticeTitle": "Aviso de Seguridad:",
+                "securityNoticeText": "Este sitio web utiliza medidas de seguridad avanzadas para proteger sus datos. Todos los envíos de formularios están encriptados y monitoreados por actividad sospechosa.",
+                
+                // Products
+                "productsTitle": "Ofertas Exclusivas para Fans",
+                "membershipTitle": "Membresía de Fan",
+                "membershipDescription": "Únete al club exclusivo de fans para beneficios especiales, descuentos y contenido exclusivo.",
+                "membershipPrice": "Desde $199.99/año",
+                "membershipButton": "Aplicar ahora",
+                "meetTitle": "Encuentro Personal",
+                "meetDescription": "Ten la oportunidad de conocer personalmente a Park Ji-Min. ¡Una experiencia única en la vida!",
+                "meetPrice": "Desde $499.99",
+                "meetButton": "Reservar ahora",
+                
+                // About Section
+                "aboutTitle": "Acerca de Park Ji-Min",
+                "aboutText1": "Park Ji-Min es un actor y modelo cubano-estadounidense conocido por su trabajo en telenovelas y películas de Hollywood. Ganó reconocimiento internacional por sus papeles en 'Triunfo del Amor' y 'La Tempestad'.",
+                "aboutText2": "Con su personalidad carismática y talento, William ha acumulado una enorme base de fans global. Este sitio web oficial es el lugar perfecto para que los fans se conecten, obtengan actualizaciones y accedan a experiencias exclusivas.",
+                "aboutText3": "¡Únete a miles de fans en todo el mundo para apoyar a este increíble artista!",
+                
+                // Contact Form
+                "contactTitle": "Únase a nuestros boletines informativos",
+                "nameLabel": "Nombre Completo",
+                "emailLabel": "Correo Electrónico",
+                "contactSubmit": "Únete ahora",
+                "successText": "Se ha suscrito correctamente a nuestros boletines. Gracias.",
+                
+                // Footer
+                "footerAboutTitle": "Acerca de Nosotros",
+                "footerAboutText": "La plataforma oficial de fans de Park Ji-Min que ofrece acceso exclusivo a membresías y experiencias de encuentros.",
+                "footerLinksTitle": "Enlaces Rápidos",
+                "footerHome": "Inicio",
+                "footerAbout": "Acerca de",
+                "footerProducts": "Productos",
+                "footerContact": "Contacto",
+                "footerConnectTitle": "Conéctate con Nosotros",
+                "footerFollowText": "¡Sigue a Park Ji-Min en las redes sociales para las últimas actualizaciones!",
+                "copyrightText": "© 2025 Plataforma de Fans de Park Ji-Min. Todos los derechos reservados.",
+                
+                // Membership Modal
+                "membershipModalTitle": "Membresía de Fan",
+                "membershipSelectText": "Selecciona tu nivel de membresía preferido:",
+                "regularFanTitle": "Fan Regular",
+                "regularFanDesc": "Beneficios básicos",
+                "vipFanTitle": "Fan VIP",
+                "vipFanDesc": "Beneficios extra",
+                "vvipFanTitle": "Fan VVIP",
+                "vvipFanDesc": "Todos los beneficios",
+                "membershipNameLabel": "Nombre Completo",
+                "membershipPhoneLabel": "Número de Teléfono",
+                "membershipEmailLabel": "Correo Electrónico",
+                "fanYearLabel": "¿En Qué Año Te Convertiste en Fan?",
+                "membershipCountryLabel": "País",
+                "membershipAddressLabel": "Dirección",
+                "membershipSubmit": "Enviar Solicitud",
+                "membershipSuccessText": "Ha enviado una solicitud, la administración se comunicará con usted por correo electrónico shortly, siempre revise su correo electrónico para recibir notificaciones nuestras. Gracias.",
+                
+                // Meet & Greet Modal
+                "meetModalTitle": "Encuentro Personal",
+                "meetSelectText": "Selecciona tu paquete de encuentro preferido:",
+                "standardMeetTitle": "Encuentro Estándar",
+                "standardMeetDesc": "Experiencia básica de encuentro",
+                "photoMeetTitle": "Experiencia Fotográfica",
+                "photoMeetDesc": "Incluye sesión fotográfica profesional",
+                "ultimateMeetTitle": "Experiencia Ultimate",
+                "ultimateMeetDesc": "Tratamiento VIP con todos los beneficios",
+                "meetDateLabel": "Reunión y hora preferidas",
+                "specialRequestsLabel": "Solicitudes Especiales",
+                "meetFanYearLabel": "¿En Qué Año Te Convertiste en Fan?",
+                "meetFullNameLabel": "Nombre Completo",
+                "meetPhoneLabel": "Número de Teléfono",
+                "meetEmailLabel": "Correo Electrónico",
+                "meetCountryLabel": "País",
+                "meetAddressLabel": "Dirección",
+                "meetSubmit": "Enviar Solicitud",
+                "meetSuccessText": "Ha enviado una solicitud, la administración se comunicará con usted por correo electrónico shortly, siempre revise su correo electrónico para recibir notificaciones nuestras. Gracias.",
+                
+                // Notification
+                "notificationText": "¡Nueva solicitud enviada! Revisa tu correo electrónico para más detalles."
+            },
+            cn: {
+                // Navigation
+                "navHome": "首页",
+				"navAbout": "关于",
+				"navProducts": "产品",
+				"navContact": "联系",
+
+				// Hero Section
+				"heroTitle1": "欢迎来到",
+                "heroTitle2": "Park Ji-Min官方粉丝平台",
+				"heroDescription": "独享粉丝会员资格和与Park Ji-Min本人见面的机会！",
+				"heroButton": "查看优惠",
+                
+				// Security
+				"secureText": "安全连接",
+				"securityNoticeTitle": "安全提示：",
+				"securityNoticeText": "本网站采用先进的安全措施保护您的数据。所有表单提交均被加密并监控异常活动。",
+
+				// Products
+				"productsTitle": "独家粉丝优惠",
+				"membershipTitle": "粉丝会员",
+				"membershipDescription": "加入专属粉丝俱乐部，享受特殊福利、折扣和独家内容。",
+				"membershipPrice": "每年￥199.99起",
+				"membershipButton": "立即申請",
+				"meetTitle": "见面会",
+				"meetDescription": "有机会亲自见到Park Ji-Min。一次难得的体验！",
+				"meetPrice": "￥499.99起",
+				"meetButton": "立即預訂",
+
+				// About Section
+				"aboutTitle": "关于Park Ji-Min",
+				"aboutText1": "Park Ji-Min是一位古巴裔美国演员和模特，因出演肥皂剧和好莱坞电影而闻名。他因在《爱的胜利》和《风暴之城》中的角色而享誉国际。",
+				"aboutText2": "凭借其迷人的个性和才华，William积累了庞大的全球粉丝基础。本官方网站是粉丝互动、获取最新动态和参与独家体验的理想之地。",
+				"aboutText3": "加入全球数千名粉丝，共同支持这位杰出的艺术家！",
+
+				// Contact Form
+				"contactTitle": "訂閱我們的新聞通訊",
+				"nameLabel": "全名",
+				"emailLabel": "电子邮件",
+				"contactSubmit": "立即加入",
+				"successText": "您已成功訂閱我們的電子報。謝謝！",
+
+				// Footer
+				"footerAboutTitle": "关于我们",
+				"footerAboutText": "Park Ji-Min官方粉丝平台，专享会员及见面体验。",
+				"footerLinksTitle": "快速链接",
+				"footerHome": "首页",
+				"footerAbout": "关于",
+				"footerProducts": "产品",
+				"footerContact": "联系",
+				"footerConnectTitle": "与我们联系",
+				"footerFollowText": "关注Park Ji-Min社交媒体，获取最新动态！",
+				"copyrightText": "© 2025 Park Ji-Min粉丝平台。保留所有权利。",
+
+				// Membership Modal
+				"membershipModalTitle": "粉丝会员",
+				"membershipSelectText": "请选择您的会员等级：",
+				"regularFanTitle": "普通粉丝",
+				"regularFanDesc": "基础福利",
+				"vipFanTitle": "VIP粉丝",
+				"vipFanDesc": "额外福利",
+				"vvipFanTitle": "VVIP粉丝",
+				"vvipFanDesc": "全部福利",
+				"membershipNameLabel": "全名",
+				"membershipPhoneLabel": "电话号码",
+				"membershipEmailLabel": "电子邮件",
+				"fanYearLabel": "您成为粉丝的年份",
+				"membershipCountryLabel": "国家",
+				"membershipAddressLabel": "地址",
+				"membershipSubmit": "提交请求",
+				"membershipSuccessText": "您的请求已提交，管理团队将通过电子邮件与您联系，请随时查收通知邮件。谢谢！",
+
+				// Meet & Greet Modal
+				"meetModalTitle": "见面会",
+				"meetSelectText": "请选择您的见面套餐：",
+				"standardMeetTitle": "标准见面会",
+				"standardMeetDesc": "基础见面体验",
+				"photoMeetTitle": "摄影体验",
+				"photoMeetDesc": "含专业摄影环节",
+				"ultimateMeetTitle": "至尊体验",
+				"ultimateMeetDesc": "VIP待遇与所有福利",
+				"meetDateLabel": "首选见面日期和时间",
+				"specialRequestsLabel": "特别要求",
+				"meetFanYearLabel": "您成为粉丝的年份",
+				"meetFullNameLabel": "全名",
+				"meetPhoneLabel": "电话号码",
+				"meetEmailLabel": "电子邮件",
+				"meetCountryLabel": "国家",
+				"meetAddressLabel": "地址",
+				"meetSubmit": "提交请求",
+				"meetSuccessText": "您的请求已提交，管理团队将通过电子邮件与您联系，请随时查收通知邮件。谢谢！",
+
+				// Notification
+				"notificationText": "新请求已提交！请查收您的电子邮件以了解详情。"
+            },
+            it: {
+                // Navigation
+                "navHome": "Home",
+				"navAbout": "Chi siamo",
+				"navProducts": "Prodotti",
+				"navContact": "Contatto",
+
+                // Hero Section
+				"heroTitle1": "Benvenuto a",
+				"heroTitle2": "Piattaforma Ufficiale Fan di Park Ji-Min",
+				"heroDescription": "Ottieni accesso esclusivo a membership fan e opportunità di incontrare Park Ji-Min di persona!",
+				"heroButton": "Scopri le offerte",
+
+                // Security 
+				"secureText": "Connessione Sicura",
+				"securityNoticeTitle": "Avviso di Sicurezza:",
+				"securityNoticeText": "Questo sito utilizza misure di sicurezza avanzate per proteggere i tuoi dati. Tutte le richieste sono crittografate e monitorate per attività sospette.",
+
+                // Products
+				"productsTitle": "Offerte Esclusive per Fan",
+				"membershipTitle": "Membership Fan",
+				"membershipDescription": "Unisciti al club esclusivo per vantaggi, sconti e contenuti riservati.",
+				"membershipPrice": "Da €199.99/anno",
+				"membershipButton": "Candidati ora",
+				"meetTitle": "Meet & Greet",
+				"meetDescription": "Hai la possibilità di incontrare personalmente Park Ji-Min. Un'esperienza irripetibile!",
+				"meetPrice": "Da €499.99",
+				"meetButton": "Prenota ora",
+
+                // About Section
+				"aboutTitle": "Chi è Park Ji-Min",
+				"aboutText1": "Park Ji-Min è un attore e modello cubano-americano noto per le telenovelas e film di Hollywood. Ha ottenuto fama internazionale per i suoi ruoli in 'Triunfo del Amor' e 'La Tempestad'.",
+				"aboutText2": "Con il suo carisma e talento, William ha conquistato una vasta base di fan in tutto il mondo. Questo sito ufficiale è il posto ideale per connettersi, ricevere aggiornamenti e accedere a esperienze esclusive.",
+				"aboutText3": "Unisciti a migliaia di fan nel mondo a sostenere questo incredibile artista!",
+
+                // Contact Form
+				"contactTitle": "Iscriviti alle nostre newsletter",
+				"nameLabel": "Nome Completo",
+				"emailLabel": "Indirizzo Email",
+				"contactSubmit": "Iscriviti ora",
+				"successText": "Ti sei iscritto con successo alle nostre newsletter. Grazie.",
+
+                // Footer
+				"footerAboutTitle": "Chi siamo",
+				"footerAboutText": "La piattaforma ufficiale di Park Ji-Min che offre accesso esclusivo a membership e esperienze Meet & Greet.",
+				"footerLinksTitle": "Link Rapidi",
+				"footerHome": "Home",
+				"footerAbout": "Chi siamo",
+				"footerProducts": "Prodotti",
+				"footerContact": "Contatto",
+				"footerConnectTitle": "Connettiti con noi",
+				"footerFollowText": "Segui Park Ji-Min sui social per gli ultimi aggiornamenti!",
+				"copyrightText": "© 2025 Piattaforma Fan Park Ji-Min. Tutti i diritti riservati.",
+
+                //Membership Modal 
+				"membershipModalTitle": "Membership Fan",
+				"membershipSelectText": "Seleziona il tuo livello di membership preferito:",
+				"regularFanTitle": "Fan Regolare",
+				"regularFanDesc": "Vantaggi base",
+				"vipFanTitle": "Fan VIP",
+				"vipFanDesc": "Vantaggi extra",
+				"vvipFanTitle": "Fan VVIP",
+				"vvipFanDesc": "Tutti i vantaggi",
+				"membershipNameLabel": "Nome Completo",
+				"membershipPhoneLabel": "Numero di Telefono",
+				"membershipEmailLabel": "Indirizzo Email",
+				"fanYearLabel": "In che anno sei diventato fan?",
+				"membershipCountryLabel": "Paese",
+				"membershipAddressLabel": "Indirizzo",
+				"membershipSubmit": "Invia Richiesta",
+				"membershipSuccessText": "Richiesta inviata, la direzione ti contatterà via email a breve. Controlla sempre la posta per le nostre notifiche. Grazie.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "Meet & Greet",
+				"meetSelectText": "Seleziona il tuo pacchetto preferito:",
+				"standardMeetTitle": "Meet & Greet Standard",
+				"standardMeetDesc": "Esperienza base",
+				"photoMeetTitle": "Esperienza Fotografica",
+				"photoMeetDesc": "Include sessione fotografica professionale",
+				"ultimateMeetTitle": "Esperienza Ultimate",
+				"ultimateMeetDesc": "Trattamento VIP con tutti i vantaggi",
+				"meetDateLabel": "Data e ora preferite dell'incontro",
+				"specialRequestsLabel": "Richieste speciali",
+				"meetFanYearLabel": "In che anno sei diventato fan?",
+				"meetFullNameLabel": "Nome Completo",
+				"meetPhoneLabel": "Numero di Telefono",
+				"meetEmailLabel": "Indirizzo Email",
+				"meetCountryLabel": "Paese",
+				"meetAddressLabel": "Indirizzo",
+				"meetSubmit": "Invia Richiesta",
+				"meetSuccessText": "Richiesta inviata, la direzione ti contatterà via email a breve. Controlla sempre la posta per le nostre notifiche. Grazie.",
+
+                // Notification
+				"notificationText": "Nuova richiesta inviata! Controlla la tua email per i dettagli."
+            },
+            de: {
+                // Navigation
+                "navHome": "Startseite",
+				"navAbout": "Über uns",
+				"navProducts": "Produkte",
+				"navContact": "Kontakt",
+                
+                // Hero Section
+				"heroTitle1": "Willkommen bei",
+				"heroTitle2": "Park Ji-Min Offizielle Fan-Plattform",
+				"heroDescription": "Erhalte exklusiven Zugang zu Fan-Mitgliedschaften und Meet & Greet-Möglichkeiten mit Park Ji-Min persönlich!",
+				"heroButton": "Angebote entdecken",
+
+                // Security
+				"secureText": "Sichere Verbindung",
+				"securityNoticeTitle": "Sicherheitshinweis:",
+				"securityNoticeText": "Diese Website verwendet fortschrittliche Sicherheitsmaßnahmen zum Schutz Ihrer Daten. Alle Formulare werden verschlüsselt und auf verdächtige Aktivitäten überwacht.",
+
+                // Products
+				"productsTitle": "Exklusive Fan-Angebote",
+				"membershipTitle": "Fan-Mitgliedschaft",
+				"membershipDescription": "Tritt dem exklusiven Fan-Club bei und erhalte besondere Vorteile, Rabatte und exklusive Inhalte.",
+				"membershipPrice": "Ab €199,99/Jahr",
+				"membershipButton": "Jetzt bewerben",
+				"meetTitle": "Meet & Greet",
+				"meetDescription": "Treffen Sie Park Ji-Min persönlich. Ein einmaliges Erlebnis!",
+				"meetPrice": "Ab €499,99",
+				"meetButton": "Jetzt buchen",
+
+                // About Section
+				"aboutTitle": "Über Park Ji-Min",
+				"aboutText1": "Park Ji-Min ist ein kubanisch-amerikanischer Schauspieler und Model, bekannt aus Telenovelas und Hollywood-Filmen. Internationale Bekanntheit erlangte er durch Rollen in 'Triunfo del Amor' und 'La Tempestad'.",
+				"aboutText2": "Mit seinem Charisma und Talent hat William eine riesige weltweite Fangemeinde aufgebaut. Diese offizielle Website ist der perfekte Ort für Fans, um sich zu vernetzen, Updates zu erhalten und exklusive Erlebnisse zu genießen.",
+				"aboutText3": "Werde Teil von tausenden Fans weltweit und unterstütze diesen großartigen Künstler!",
+
+                // Contact Form
+				"contactTitle": "Abonnieren Sie unseren Newsletter",
+				"nameLabel": "Vollständiger Name",
+				"emailLabel": "E-Mail-Adresse",
+				"contactSubmit": "Jetzt beitreten!",
+				"successText": "Sie haben unseren Newsletter erfolgreich abonniert. Danke.",
+
+                // Footer
+				"footerAboutTitle": "Über uns",
+				"footerAboutText": "Die offizielle Park Ji-Min Fan-Plattform mit exklusivem Zugang zu Mitgliedschaften und Meet & Greet-Erlebnissen.",
+				"footerLinksTitle": "Schnellzugriff",
+				"footerHome": "Startseite",
+				"footerAbout": "Über uns",
+				"footerProducts": "Produkte",
+				"footerContact": "Kontakt",
+				"footerConnectTitle": "Verbinde dich mit uns",
+				"footerFollowText": "Folge Park Ji-Min in den sozialen Medien für die neuesten Updates!",
+				"copyrightText": "© 2025 Park Ji-Min Fan-Plattform. Alle Rechte vorbehalten.",
+
+                // Membership Modal
+				"membershipModalTitle": "Fan-Mitgliedschaft",
+				"membershipSelectText": "Wähle dein bevorzugtes Mitgliedschaftsniveau:",
+				"regularFanTitle": "Regulärer Fan",
+				"regularFanDesc": "Grundlegende Vorteile",
+				"vipFanTitle": "VIP-Fan",
+				"vipFanDesc": "Zusätzliche Vorteile",
+				"vvipFanTitle": "VVIP-Fan",
+				"vvipFanDesc": "Alle Vorteile",
+				"membershipNameLabel": "Vollständiger Name",
+				"membershipPhoneLabel": "Telefonnummer",
+				"membershipEmailLabel": "E-Mail-Adresse",
+				"fanYearLabel": "In welchem Jahr wurdest du Fan?",
+				"membershipCountryLabel": "Land",
+				"membershipAddressLabel": "Adresse",
+				"membershipSubmit": "Anfrage absenden",
+				"membershipSuccessText": "Ihre Anfrage wurde gesendet. Das Management wird Sie in Kürze per E-Mail kontaktieren. Bitte prüfen Sie regelmäßig Ihre E-Mails auf Benachrichtigungen von uns. Danke.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "Meet & Greet",
+				"meetSelectText": "Wähle dein bevorzugtes Meet & Greet-Paket:",
+				"standardMeetTitle": "Standard Meet & Greet",
+				"standardMeetDesc": "Grundlegendes Meet & Greet Erlebnis",
+				"photoMeetTitle": "Foto-Erlebnis",
+				"photoMeetDesc": "Inklusive professioneller Fotosession",
+				"ultimateMeetTitle": "Ultimate Erlebnis",
+				"ultimateMeetDesc": "VIP-Behandlung mit allen Vorteilen",
+				"meetDateLabel": "Bevorzugtes Datum und Zeit",
+				"specialRequestsLabel": "Besondere Wünsche",
+				"meetFanYearLabel": "In welchem Jahr wurdest du Fan?",
+				"meetFullNameLabel": "Vollständiger Name",
+				"meetPhoneLabel": "Telefonnummer",
+				"meetEmailLabel": "E-Mail-Adresse",
+				"meetCountryLabel": "Land",
+				"meetAddressLabel": "Adresse",
+				"meetSubmit": "Anfrage absenden",
+				"meetSuccessText": "Ihre Anfrage wurde gesendet. Das Management wird Sie in Kürze per E-Mail kontaktieren. Bitte prüfen Sie regelmäßig Ihre E-Mails auf Benachrichtigungen von uns. Danke.",
+
+                // Notification
+				"notificationText": "Neue Anfrage gesendet! Prüfen Sie Ihre E-Mail für weitere Details."
+            },
+            pt: {
+                // Navigation
+                "navHome": "Início",
+				"navAbout": "Sobre",
+				"navProducts": "Produtos",
+				"navContact": "Contato",
+				
+                // Hero Section
+				"heroTitle1": "Bem-vindo à",
+				"heroTitle2": "Plataforma Oficial de Fãs Park Ji-Min",
+				"heroDescription": "Tenha acesso exclusivo a membros do fã-clube e oportunidades de conhecer Park Ji-Min pessoalmente!",
+				"heroButton": "Ver Ofertas",
+				
+                // Security
+				"secureText": "Conexão Segura",
+				"securityNoticeTitle": "Aviso de Segurança:",
+				"securityNoticeText": "Este site utiliza medidas avançadas de segurança para proteger seus dados. Todos os envios de formulários são criptografados e monitorados para atividades suspeitas.",
+
+                // Products
+				"productsTitle": "Ofertas Exclusivas para Fãs",
+				"membershipTitle": "Assinatura de Fã",
+				"membershipDescription": "Junte-se ao clube exclusivo para benefícios especiais, descontos e conteúdos exclusivos.",
+				"membershipPrice": "A partir de R$199,99/ano",
+				"membershipButton": "Inscreva-se agora",
+				"meetTitle": "Meet & Greet",
+				"meetDescription": "Tenha a chance de conhecer Park Ji-Min pessoalmente. Uma experiência única!",
+				"meetPrice": "A partir de R$499,99",
+				"meetButton": "Reserve agora",
+
+                // About Section
+				"aboutTitle": "Sobre Park Ji-Min",
+				"aboutText1": "Park Ji-Min é um ator e modelo cubano-americano conhecido por seu trabalho em novelas e filmes de Hollywood. Ficou famoso internacionalmente por seus papéis em 'Triunfo del Amor' e 'La Tempestad'.",
+				"aboutText2": "Com seu carisma e talento, William conquistou uma enorme base de fãs mundial. Este site oficial é o lugar perfeito para fãs se conectarem, receberem atualizações e acessarem experiências exclusivas.",
+				"aboutText3": "Junte-se a milhares de fãs ao redor do mundo apoiando este incrível artista!",
+
+                // Contact Form
+				"contactTitle": "Assine Nossas Newsletters",
+				"nameLabel": "Nome Completo",
+				"emailLabel": "Endereço de E-mail",
+				"contactSubmit": "Cadastre-se agora!",
+				"successText": "Você se inscreveu com sucesso em nossas newsletters. Obrigado.",
+
+                // Footer
+				"footerAboutTitle": "Sobre Nós",
+				"footerAboutText": "A plataforma oficial de fãs de Park Ji-Min oferece acesso exclusivo a assinaturas e experiências Meet & Greet.",
+				"footerLinksTitle": "Links Rápidos",
+				"footerHome": "Início",
+				"footerAbout": "Sobre",
+				"footerProducts": "Produtos",
+				"footerContact": "Contato",
+				"footerConnectTitle": "Conecte-se Conosco",
+				"footerFollowText": "Siga Park Ji-Min nas redes sociais para as últimas novidades!",
+				"copyrightText": "© 2025 Plataforma de Fãs Park Ji-Min. Todos os direitos reservados.",
+
+                // Membership Modal
+				"membershipModalTitle": "Assinatura de Fã",
+				"membershipSelectText": "Selecione seu nível de assinatura preferido:",
+				"regularFanTitle": "Fã Regular",
+				"regularFanDesc": "Benefícios básicos",
+				"vipFanTitle": "Fã VIP",
+				"vipFanDesc": "Benefícios extras",
+				"vvipFanTitle": "Fã VVIP",
+				"vvipFanDesc": "Todos os benefícios",
+				"membershipNameLabel": "Nome Completo",
+				"membershipPhoneLabel": "Telefone",
+				"membershipEmailLabel": "E-mail",
+				"fanYearLabel": "Em que ano você se tornou fã",
+				"membershipCountryLabel": "País",
+				"membershipAddressLabel": "Endereço",
+				"membershipSubmit": "Enviar Pedido",
+				"membershipSuccessText": "Você enviou uma solicitação, a administração entrará em contato com você por e-mail em breve. Sempre confira seu e-mail para notificações nossas. Obrigado.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "Meet & Greet",
+				"meetSelectText": "Selecione seu pacote preferido:",
+				"standardMeetTitle": "Meet & Greet Padrão",
+				"standardMeetDesc": "Experiência básica",
+				"photoMeetTitle": "Experiência Fotográfica",
+				"photoMeetDesc": "Inclui sessão de fotos profissional",
+				"ultimateMeetTitle": "Experiência Ultimate",
+				"ultimateMeetDesc": "Tratamento VIP com todos os benefícios",
+				"meetDateLabel": "Data e hora preferidas",
+				"specialRequestsLabel": "Solicitações Especiais",
+				"meetFanYearLabel": "Em que ano você se tornou fã",
+				"meetFullNameLabel": "Nome Completo",
+				"meetPhoneLabel": "Telefone",
+				"meetEmailLabel": "E-mail",
+				"meetCountryLabel": "País",
+				"meetAddressLabel": "Endereço",
+				"meetSubmit": "Enviar Pedido",
+				"meetSuccessText": "Você enviou uma solicitação, a administração entrará em contato com você por e-mail em breve. Sempre confira seu e-mail para notificações nossas. Obrigado.",
+
+                // Notification
+				"notificationText": "Novo pedido enviado! Confira seu e-mail para mais detalhes."
+            }, 
+            fr: {
+                // Navigation
+                "navHome": "Accueil",
+				"navAbout": "À propos",
+				"navProducts": "Produits",
+				"navContact": "Contact",
+
+                // Hero Section
+				"heroTitle1": "Bienvenue sur",
+				"heroTitle2": "Plateforme Officielle des Fans de Park Ji-Min",
+				"heroDescription": "Accédez exclusivement à des adhésions de fans et à des opportunités de rencontrer Park Ji-Min en personne !",
+				"heroButton": "Découvrir les offres",
+
+                // Security
+				"secureText": "Connexion sécurisée",
+				"securityNoticeTitle": "Avis de sécurité :",
+				"securityNoticeText": "Ce site utilise des mesures de sécurité avancées pour protéger vos données. Toutes les soumissions de formulaires sont cryptées et surveillées contre les activités suspectes.",
+
+                // Products
+				"productsTitle": "Offres Exclusives pour les Fans",
+				"membershipTitle": "Adhésion Fan",
+				"membershipDescription": "Rejoignez le club exclusif des fans pour des avantages spéciaux, des réductions et du contenu exclusif.",
+				"membershipPrice": "À partir de 199,99€/an",
+				"membershipButton": "Postulez maintenant",
+				"meetTitle": "Rencontre",
+				"meetDescription": "Ayez la chance de rencontrer Park Ji-Min en personne. Une expérience unique !",
+				"meetPrice": "À partir de 499,99€",
+				"meetButton": "Réservez maintenant",
+
+                // About Section
+				"aboutTitle": "À propos de Park Ji-Min",
+				"aboutText1": "Park Ji-Min est un acteur et mannequin cubano-américain connu pour ses rôles dans des telenovelas et des films hollywoodiens. Il a acquis une reconnaissance internationale grâce à ses rôles dans 'Triunfo del Amor' et 'La Tempestad'.",
+				"aboutText2": "Avec son charisme et son talent, William a rassemblé une immense base de fans dans le monde entier. Ce site officiel est l'endroit idéal pour se connecter, recevoir des mises à jour et accéder à des expériences exclusives.",
+				"aboutText3": "Rejoignez des milliers de fans à travers le monde pour soutenir cet artiste incroyable !",
+
+                // Contact Form
+				"contactTitle": "Abonnez-vous à nos newsletters",
+				"nameLabel": "Nom complet",
+				"emailLabel": "Adresse e-mail",
+				"contactSubmit": "Rejoignez-nous maintenant",
+				"successText": "Vous avez souscrit avec succès à nos newsletters. Merci.",
+
+                // Footer
+				"footerAboutTitle": "À propos de nous",
+				"footerAboutText": "La plateforme officielle de fans Park Ji-Min offrant un accès exclusif aux adhésions et aux expériences de rencontre.",
+				"footerLinksTitle": "Liens rapides",
+				"footerHome": "Accueil",
+				"footerAbout": "À propos",
+				"footerProducts": "Produits",
+				"footerContact": "Contact",
+				"footerConnectTitle": "Nous contacter",
+				"footerFollowText": "Suivez Park Ji-Min sur les réseaux sociaux pour les dernières actualités !",
+				"copyrightText": "© 2025 Plateforme de Fans de Park Ji-Min. Tous droits réservés.",
+
+                // Membership Modal
+				"membershipModalTitle": "Adhésion Fan",
+				"membershipSelectText": "Sélectionnez votre niveau d’adhésion préféré :",
+				"regularFanTitle": "Fan Régulier",
+				"regularFanDesc": "Avantages de base",
+				"vipFanTitle": "Fan VIP",
+				"vipFanDesc": "Avantages supplémentaires",
+				"vvipFanTitle": "Fan VVIP",
+				"vvipFanDesc": "Tous les avantages",
+				"membershipNameLabel": "Nom complet",
+				"membershipPhoneLabel": "Numéro de téléphone",
+				"membershipEmailLabel": "Adresse e-mail",
+				"fanYearLabel": "Année où vous êtes devenu fan",
+				"membershipCountryLabel": "Pays",
+				"membershipAddressLabel": "Adresse",
+				"membershipSubmit": "Soumettre la demande",
+				"membershipSuccessText": "Votre demande a été soumise, la direction vous contactera bientôt par e-mail. Vérifiez régulièrement votre boîte mail pour nos notifications. Merci.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "Rencontre",
+				"meetSelectText": "Sélectionnez votre forfait préféré :",
+				"standardMeetTitle": "Rencontre Standard",
+				"standardMeetDesc": "Expérience de rencontre de base",
+				"photoMeetTitle": "Expérience Photo",
+				"photoMeetDesc": "Inclut une séance photo professionnelle",
+				"ultimateMeetTitle": "Expérience Ultime",
+				"ultimateMeetDesc": "Traitement VIP avec tous les avantages",
+				"meetDateLabel": "Date et heure de rencontre préférées",
+				"specialRequestsLabel": "Demandes spéciales",
+				"meetFanYearLabel": "Année où vous êtes devenu fan",
+				"meetFullNameLabel": "Nom complet",
+				"meetPhoneLabel": "Numéro de téléphone",
+				"meetEmailLabel": "Adresse e-mail",
+				"meetCountryLabel": "Pays",
+				"meetAddressLabel": "Adresse",
+				"meetSubmit": "Soumettre la demande",
+				"meetSuccessText": "Votre demande a été soumise, la direction vous contactera bientôt par e-mail. Vérifiez régulièrement votre boîte mail pour nos notifications. Merci.",
+
+                // Notification
+				"notificationText": "Nouvelle demande soumise ! Vérifiez votre e-mail pour plus de détails."
+            },
+            ru: {
+                // Navigation
+                "navHome": "Главная",
+				"navAbout": "О нас",
+				"navProducts": "Продукты",
+				"navContact": "Контакты",
+
+                // Hero Section
+				"heroTitle1": "Добро пожаловать на",
+				"heroTitle2": "Официальная фан-платформа Park Ji-Min",
+				"heroDescription": "Получите эксклюзивный доступ к членству фан-клуба и возможностям встретиться с самим Park Ji-Min!",
+				"heroButton": "Посмотреть предложения",
+
+                // Security
+				"secureText": "Безопасное соединение",
+				"securityNoticeTitle": "Уведомление о безопасности:",
+				"securityNoticeText": "Этот сайт использует современные меры безопасности для защиты ваших данных. Все отправленные формы шифруются и контролируются на подозрительную активность.",
+
+                // Products
+				"productsTitle": "Эксклюзивные предложения для фанатов",
+				"membershipTitle": "Членство фаната",
+				"membershipDescription": "Присоединяйтесь к эксклюзивному фан-клубу для специальных привилегий, скидок и уникального контента.",
+				"membershipPrice": "От 199,99$/год",
+				"membershipButton": "Подать заявку сейчас",
+				"meetTitle": "Встреча",
+				"meetDescription": "Получите шанс встретиться с Park Ji-Min лично. Уникальный опыт!",
+				"meetPrice": "От 499,99$",
+				"meetButton": "Забронировать сейчас",
+
+                // About Section
+				"aboutTitle": "О Park Ji-Min",
+				"aboutText1": "Park Ji-Min — кубино-американский актер и модель, известный по теленовеллам и голливудским фильмам. Получил международное признание за роли в 'Triunfo del Amor' и 'La Tempestad'.",
+				"aboutText2": "Благодаря своему обаянию и таланту, William собрал огромную мировую фан-базу. Этот официальный сайт — идеальное место для общения фанатов, получения новостей и эксклюзивных возможностей.",
+				"aboutText3": "Присоединяйтесь к тысячам фанатов по всему миру и поддержите этого невероятного артиста!",
+
+                // Contact Form
+				"contactTitle": "Подпишитесь на нашу рассылку",
+				"nameLabel": "Полное имя",
+				"emailLabel": "Электронная почта",
+				"contactSubmit": "Присоединяйтесь сейчас",
+				"successText": "Вы успешно подписались на нашу рассылку. Спасибо.",
+
+                // Footer
+				"footerAboutTitle": "О нас",
+				"footerAboutText": "Официальная фан-платформа Park Ji-Min с эксклюзивным доступом к членству и встречам.",
+				"footerLinksTitle": "Быстрые ссылки",
+				"footerHome": "Главная",
+				"footerAbout": "О нас",
+				"footerProducts": "Продукты",
+				"footerContact": "Контакты",
+				"footerConnectTitle": "Свяжитесь с нами",
+				"footerFollowText": "Следите за Park Ji-Min в соцсетях для последних новостей!",
+				"copyrightText": "© 2025 Фан-платформа Park Ji-Min. Все права защищены.",
+
+                // Membership Modal
+				"membershipModalTitle": "Членство фаната",
+				"membershipSelectText": "Выберите желаемый уровень членства:",
+				"regularFanTitle": "Обычный фанат",
+				"regularFanDesc": "Базовые привилегии",
+				"vipFanTitle": "VIP-фанат",
+				"vipFanDesc": "Дополнительные привилегии",
+				"vvipFanTitle": "VVIP-фанат",
+				"vvipFanDesc": "Все привилегии",
+				"membershipNameLabel": "Полное имя",
+				"membershipPhoneLabel": "Номер телефона",
+				"membershipEmailLabel": "Электронная почта",
+				"fanYearLabel": "В каком году вы стали фанатом",
+				"membershipCountryLabel": "Страна",
+				"membershipAddressLabel": "Адрес",
+				"membershipSubmit": "Отправить заявку",
+				"membershipSuccessText": "Ваша заявка отправлена, руководство свяжется с вами по электронной почте в ближайшее время. Всегда проверяйте свой email для уведомлений от нас. Спасибо.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "Встреча",
+				"meetSelectText": "Выберите желаемый пакет встречи:",
+				"standardMeetTitle": "Стандартная встреча",
+				"standardMeetDesc": "Базовый опыт встречи",
+				"photoMeetTitle": "Фото-опыт",
+				"photoMeetDesc": "Включает профессиональную фотосессию",
+				"ultimateMeetTitle": "Ultimate-опыт",
+				"ultimateMeetDesc": "VIP-обслуживание со всеми привилегиями",
+				"meetDateLabel": "Желаемая дата и время",
+				"specialRequestsLabel": "Особые пожелания",
+				"meetFanYearLabel": "В каком году вы стали фанатом",
+				"meetFullNameLabel": "Полное имя",
+				"meetPhoneLabel": "Номер телефона",
+				"meetEmailLabel": "Электронная почта",
+				"meetCountryLabel": "Страна",
+				"meetAddressLabel": "Адрес",
+				"meetSubmit": "Отправить заявку",
+				"meetSuccessText": "Ваша заявка отправлена, руководство свяжется с вами по электронной почте в ближайшее время. Всегда проверяйте свой email для уведомлений от нас. Спасибо.",
+
+                // Notification
+				"notificationText": "Новая заявка отправлена! Проверьте свою электронную почту для деталей."
+            },
+            ar: {
+                // Navigation
+                "navHome": "الرئيسية",
+				"navAbout": "حول",
+				"navProducts": "المنتجات",
+				"navContact": "اتصل بنا",
+
+                // Hero Section
+				"heroTitle1": "مرحباً بك في",
+				"heroTitle2": "المنصة الرسمية لمعجبي ويليام ليفي",
+				"heroDescription": "احصل على وصول حصري لعضوية المعجبين وفرص مقابلة ويليام ليفي شخصياً!",
+				"heroButton": "استكشاف العروض",
+
+                // Security
+				"secureText": "اتصال آمن",
+				"securityNoticeTitle": "تنبيه أمني:",
+				"securityNoticeText": "يستخدم هذا الموقع إجراءات أمنية متقدمة لحماية بياناتك. جميع إرسال النماذج مشفرة وتتم مراقبتها للنشاط المريب.",
+
+                // Products
+				"productsTitle": "عروض حصرية للمعجبين",
+				"membershipTitle": "عضوية المعجبين",
+				"membershipDescription": "انضم إلى نادي المعجبين الحصري للحصول على مزايا خاصة وخصومات ومحتوى حصري.",
+				"membershipPrice": "ابتداءً من 199.99$/سنوياً",
+				"membershipButton": "تقدم الآن",
+				"meetTitle": "لقاء وتعريف",
+				"meetDescription": "احصل على فرصة مقابلة ويليام ليفي شخصياً. تجربة لا تتكرر!",
+				"meetPrice": "ابتداءً من 499.99$",
+				"meetButton": "احجز الآن",
+
+                // About Section
+				"aboutTitle": "حول ويليام ليفي",
+				"aboutText1": "ويليام ليفي هو ممثل وعارض أزياء كوبي-أمريكي معروف بأعماله في المسلسلات التلفزيونية وأفلام هوليوود. اكتسب شهرة دولية من خلال أدواره في 'Triunfo del Amor' و 'La Tempestad'.",
+				"aboutText2": "بفضل شخصيته الجذابة وموهبته، جمع ويليام قاعدة جماهيرية ضخمة حول العالم. هذا الموقع الرسمي هو المكان المثالي لتواصل المعجبين والحصول على التحديثات والوصول إلى تجارب حصرية.",
+				"aboutText3": "انضم إلى آلاف المعجبين حول العالم لدعم هذا الفنان الرائع!",
+
+                // Contact Form
+				"contactTitle": "ااشترك في النشرات الإخبارية لدينا",
+				"nameLabel": "الاسم الكامل",
+				"emailLabel": "البريد الإلكتروني",
+				"contactSubmit": "انضم الآن",
+				"successText": "لقد اشتركت بنجاح في نشرتنا الإخبارية. شكرًا لك.",
+
+                // Footer
+				"footerAboutTitle": "حولنا",
+				"footerAboutText": "المنصة الرسمية لمعجبي ويليام ليفي تقدم وصولاً حصرياً للعضوية وتجارب اللقاء.",
+				"footerLinksTitle": "روابط سريعة",
+				"footerHome": "الرئيسية",
+				"footerAbout": "حول",
+				"footerProducts": "المنتجات",
+				"footerContact": "اتصل بنا",
+				"footerConnectTitle": "تواصل معنا",
+				"footerFollowText": "تابع ويليام ليفي على وسائل التواصل الاجتماعي لأحدث التحديثات!",
+				"copyrightText": "© 2025 منصة معجبي ويليام ليفي. جميع الحقوق محفوظة.",
+
+                // Membership Modal
+				"membershipModalTitle": "عضوية المعجبين",
+				"membershipSelectText": "اختر مستوى العضوية المفضل لديك:",
+				"regularFanTitle": "معجب عادي",
+				"regularFanDesc": "مزايا أساسية",
+				"vipFanTitle": "معجب VIP",
+				"vipFanDesc": "مزايا إضافية",
+				"vvipFanTitle": "معجب VVIP",
+				"vvipFanDesc": "جميع المزايا",
+				"membershipNameLabel": "الاسم الكامل",
+				"membershipPhoneLabel": "رقم الهاتف",
+				"membershipEmailLabel": "البريد الإلكتروني",
+				"fanYearLabel": "في أي سنة أصبحت معجباً",
+				"membershipCountryLabel": "الدولة",
+				"membershipAddressLabel": "العنوان",
+				"membershipSubmit": "إرسال الطلب",
+				"membershipSuccessText": "تم إرسال طلبك، ستتواصل الإدارة معك عبر البريد الإلكتروني قريباً. تأكد دائماً من مراجعة بريدك الإلكتروني للإشعارات منا. شكراً لك.",
+
+                // Meet & Greet Modal
+				"meetModalTitle": "لقاء وتعريف",
+				"meetSelectText": "اختر حزمة اللقاء المفضلة لديك:",
+				"standardMeetTitle": "لقاء قياسي",
+				"standardMeetDesc": "تجربة لقاء أساسية",
+				"photoMeetTitle": "تجربة التصوير",
+				"photoMeetDesc": "يشمل جلسة تصوير احترافية",
+				"ultimateMeetTitle": "تجربة Ultimate",
+				"ultimateMeetDesc": "معاملة VIP مع جميع المزايا",
+				"meetDateLabel": "تاريخ ووقت اللقاء المفضل",
+				"specialRequestsLabel": "طلبات خاصة",
+				"meetFanYearLabel": "في أي سنة أصبحت معجباً",
+				"meetFullNameLabel": "الاسم الكامل",
+				"meetPhoneLabel": "رقم الهاتف",
+				"meetEmailLabel": "البريد الإلكتروني",
+				"meetCountryLabel": "الدولة",
+				"meetAddressLabel": "العنوان",
+				"meetSubmit": "إرسال الطلب",
+				"meetSuccessText": "تم إرسال طلبك، ستتواصل الإدارة معك عبر البريد الإلكتروني قريباً. تأكد دائماً من مراجعة بريدك الإلكتروني للإشعارات منا. شكراً لك.",
+
+                // Notification
+				"notificationText": "تم إرسال طلب جديد! تحقق من بريدك الإلكتروني للمزيد من التفاصيل."
+            },
+			el: {
+				// Navigation
+				"navHome": "Αρχική",
+				"navAbout": "Σχετικά",
+				"navProducts": "Προϊόντα",
+				"navContact": "Επικοινωνία",
+
+				// Hero Section
+				"heroTitle1": "Καλώς ήρθατε στην",
+				"heroTitle2": "Επίσημη Πλατφόρμα Φαν του Park Ji-Min",
+				"heroDescription": "Αποκτήστε αποκλειστική πρόσβαση σε συνδρομές φαν και ευκαιρίες για να γνωρίσετε τον ίδιο τον Park Ji-Min!",
+				"heroButton": "Δείτε Προσφορές",
+
+				// Security
+				"secureText": "Ασφαλής Σύνδεση",
+				"securityNoticeTitle": "Ειδοποίηση Ασφαλείας:",
+				"securityNoticeText": "Αυτός ο ιστότοπος χρησιμοποιεί προηγμένα μέτρα ασφαλείας για την προστασία των δεδομένων σας. Όλες οι υποβολές φορμών είναι κρυπτογραφημένες και παρακολουθούνται για ύποπτη δραστηριότητα.",
+
+				// Products
+				"productsTitle": "Αποκλειστικές Προσφορές Φαν",
+				"membershipTitle": "Συνδρομή Φαν",
+				"membershipDescription": "Γίνετε μέλος στο αποκλειστικό fan club για ειδικά προνόμια, εκπτώσεις και αποκλειστικό περιεχόμενο.",
+				"membershipPrice": "Από €199.99/έτος",
+				"membershipButton": "Κάντε αίτηση τώρα",
+				"meetTitle": "Συνάντηση",
+				"meetDescription": "Αποκτήστε την ευκαιρία να γνωρίσετε προσωπικά τον Park Ji-Min. Μια μοναδική εμπειρία!",
+				"meetPrice": "Από €499.99",
+				"meetButton": "Κάντε κράτηση τώρα",
+
+				// About Section
+				"aboutTitle": "Σχετικά με τον Park Ji-Min",
+				"aboutText1": "Ο Park Ji-Min είναι Κουβανός-Αμερικανός ηθοποιός και μοντέλο, γνωστός για τη δουλειά του σε τηλενουβέλες και ταινίες του Χόλιγουντ. Έγινε διεθνώς γνωστός για τους ρόλους του στις σειρές 'Triunfo del Amor' και 'La Tempestad'.",
+				"aboutText2": "Με το χάρισμα και το ταλέντο του, ο William έχει αποκτήσει μια τεράστια παγκόσμια βάση θαυμαστών. Αυτή η επίσημη ιστοσελίδα είναι το ιδανικό μέρος για να συνδεθείτε, να λαμβάνετε ενημερώσεις και να αποκτήσετε αποκλειστικές εμπειρίες.",
+				"aboutText3": "Γίνετε μέλος χιλιάδων φαν παγκοσμίως και στηρίξτε αυτόν τον απίστευτο καλλιτέχνη!",
+
+				// Contact Form
+				"contactTitle": "Εγγραφείτε στα ενημερωτικά μας δελτία",
+				"nameLabel": "Ονοματεπώνυμο",
+				"emailLabel": "Διεύθυνση Email",
+				"contactSubmit": "Εγγραφείτε τώρα",
+				"successText": "Εγγραφήκατε με επιτυχία στα ενημερωτικά μας δελτία. Ευχαριστούμε.",
+
+				// Footer
+				"footerAboutTitle": "Σχετικά με Εμάς",
+				"footerAboutText": "Η επίσημη πλατφόρμα φαν του Park Ji-Min που προσφέρει αποκλειστική πρόσβαση σε συνδρομές και εμπειρίες συνάντησης.",
+				"footerLinksTitle": "Γρήγοροι Σύνδεσμοι",
+				"footerHome": "Αρχική",
+				"footerAbout": "Σχετικά",
+				"footerProducts": "Προϊόντα",
+				"footerContact": "Επικοινωνία",
+				"footerConnectTitle": "Συνδεθείτε μαζί μας",
+				"footerFollowText": "Ακολουθήστε τον Park Ji-Min στα κοινωνικά δίκτυα για τις τελευταίες ενημερώσεις!",
+				"copyrightText": "© 2025 Επίσημη Πλατφόρμα Φαν του Park Ji-Min. Όλα τα δικαιώματα διατηρούνται.",
+
+				// Membership Modal
+				"membershipModalTitle": "Συνδρομή Φαν",
+				"membershipSelectText": "Επιλέξτε το προτιμώμενο επίπεδο συνδρομής:",
+				"regularFanTitle": "Κανονικός Φαν",
+				"regularFanDesc": "Βασικά προνόμια",
+				"vipFanTitle": "VIP Φαν",
+				"vipFanDesc": "Επιπλέον προνόμια",
+				"vvipFanTitle": "VVIP Φαν",
+				"vvipFanDesc": "Όλα τα προνόμια",
+				"membershipNameLabel": "Ονοματεπώνυμο",
+				"membershipPhoneLabel": "Αριθμός Τηλεφώνου",
+				"membershipEmailLabel": "Διεύθυνση Email",
+				"fanYearLabel": "Τι Χρονιά Γίνατε Φαν",
+				"membershipCountryLabel": "Χώρα",
+				"membershipAddressLabel": "Διεύθυνση",
+				"membershipSubmit": "Υποβολή Αιτήματος",
+				"membershipSuccessText": "Η αίτησή σας υποβλήθηκε, η διαχείριση θα επικοινωνήσει μαζί σας σύντομα μέσω email. Ελέγχετε πάντα το email σας για ειδοποιήσεις από εμάς. Ευχαριστούμε.",
+
+				// Meet & Greet Modal
+				"meetModalTitle": "Συνάντηση",
+				"meetSelectText": "Επιλέξτε το προτιμώμενο πακέτο συνάντησης:",
+				"standardMeetTitle": "Τυπική Συνάντηση",
+				"standardMeetDesc": "Βασική εμπειρία συνάντησης",
+				"photoMeetTitle": "Φωτογραφική Εμπειρία",
+				"photoMeetDesc": "Περιλαμβάνει επαγγελματική φωτογράφιση",
+				"ultimateMeetTitle": "Ultimate Εμπειρία",
+				"ultimateMeetDesc": "VIP μεταχείριση με όλα τα προνόμια",
+				"meetDateLabel": "Προτιμώμενη Ημερομηνία και Ώρα",
+				"specialRequestsLabel": "Ειδικά Αιτήματα",
+				"meetFanYearLabel": "Τι Χρονιά Γίνατε Φαν",
+				"meetFullNameLabel": "Ονοματεπώνυμο",
+				"meetPhoneLabel": "Αριθμός Τηλεφώνου",
+				"meetEmailLabel": "Διεύθυνση Email",
+				"meetCountryLabel": "Χώρα",
+				"meetAddressLabel": "Διεύθυνση",
+				"meetSubmit": "Υποβολή Αιτήματος",
+				"meetSuccessText": "Η αίτησή σας υποβλήθηκε, η διαχείριση θα επικοινωνήσει μαζί σας σύντομα μέσω email. Ελέγχετε πάντα το email σας για ειδοποιήσεις από εμάς. Ευχαριστούμε.",
+
+				// Notification
+				"notificationText": "Νέο αίτημα υποβλήθηκε! Ελέγξτε το email σας για λεπτομέρειες."
+			}
+        };
+
+        // Set language function
+        function setLanguage(lang) {
+            // Update the language in localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update the language button text
+            document.getElementById('currentLangDisplay').textContent = lang.toUpperCase();
+            document.getElementById('currentLang').textContent = lang.toUpperCase();
+            
+            // Update all text elements with translations
+            for (const key in translations[lang]) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[lang][key];
+                }
+            }
+            
+            // Update the HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Detect user language on page load
+        function detectUserLanguage() {
+            // Check if user has a preferred language saved
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                return savedLanguage;
+            }
+            
+            // Detect browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+            const primaryLang = browserLang.split('-')[0];
+            
+            // Check if we support this language
+            if (translations[primaryLang]) {
+                return primaryLang;
+            }
+            
+            // Default to Spanish
+            return 'es';
+        }
+
+        // Initialize language on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const generateBtn = document.getElementById('generateBtn');
-            const saveBtn = document.getElementById('saveBtn');
-            const membershipCard = document.getElementById('membershipCard');
-            const form = document.getElementById('fanForm');
-            const photoUpload = document.getElementById('photoUpload');
-            const williamSignature = document.getElementById('williamSignature');
-            const managementSignature = document.getElementById('managementSignature');
-            const williamPreview = document.getElementById('williamPreview');
-            const managementPreview = document.getElementById('managementPreview');
+            const userLanguage = detectUserLanguage();
+            setLanguage(userLanguage);
             
-            let photoDataUrl = '';
-            let williamSignatureDataUrl = '';
-            let managementSignatureDataUrl = '';
-            
-            // Flip card on click
-            membershipCard.addEventListener('click', function() {
-                this.classList.toggle('flipped');
-            });
-            
-            // Handle photo upload
-            photoUpload.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        photoDataUrl = event.target.result;
-                        document.getElementById('previewPhoto').innerHTML = `<img src="${photoDataUrl}" alt="Fan Photo">`;
-                    };
-                    reader.readAsDataURL(file);
+            // Set minimum date for meet & greet to today
+            const meetDate = document.getElementById('meetDate');
+            if (meetDate) {
+                meetDate.min = new Date().toISOString().split('T')[0];
+            }
+        });
+
+        // Security: Prevent console errors in production
+        if (typeof console === "undefined" || typeof console.log === "undefined") {
+            console = { log: function() {} };
+        }
+
+        // Security: Disable right-click context menu to prevent image theft
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showNotification('Right-click is disabled for security reasons.');
+        });
+
+        // Security: Disable text selection on sensitive elements
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return; // Allow selection in form fields
+            }
+            e.preventDefault();
+        });
+
+        // Security: Detect and block common hacking tools
+        const blockedKeywords = ['webscarab', 'burp', 'sqlmap', 'nmap', 'metasploit'];
+        window.addEventListener('load', function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            for (const keyword of blockedKeywords) {
+                if (userAgent.includes(keyword)) {
+                    document.body.innerHTML = '<h1>Access Denied</h1><p>Security violation detected.</p>';
+                    throw new Error('Security violation');
                 }
-            });
-            
-            // Handle William Levy signature upload
-            williamSignature.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        williamSignatureDataUrl = event.target.result;
-                        williamPreview.innerHTML = `<img src="${williamSignatureDataUrl}" alt="William Levy Signature">`;
-                        document.getElementById('williamSignaturePreview').innerHTML = `<img src="${williamSignatureDataUrl}" alt="William Levy Signature">`;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-            
-            // Handle management signature upload
-            managementSignature.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        managementSignatureDataUrl = event.target.result;
-                        managementPreview.innerHTML = `<img src="${managementSignatureDataUrl}" alt="Management Signature">`;
-                        document.getElementById('managementSignaturePreview').innerHTML = `<img src="${managementSignatureDataUrl}" alt="Management Signature">`;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-            
-            // Generate card
-            generateBtn.addEventListener('click', function() {
-                const fullName = document.getElementById('fullName').value;
-                const dob = document.getElementById('dob').value;
-                const country = document.getElementById('country').value;
-                
-                if (!fullName || !dob || !country) {
-                    alert('Please fill in all fields');
-                    return;
-                }
-                
-                // Calculate age
-                const birthDate = new Date(dob);
-                const today = new Date();
-                let age = today.getFullYear() - birthDate.getFullYear();
-                const monthDiff = today.getMonth() - birthDate.getMonth();
-                
-                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                    age--;
-                }
-                
-                // Generate random PIN
-                const pin = generatePIN();
-                
-                // Generate barcode
-                const barcodeSvg = generateBarcode(pin);
-                
-                // Update preview
-                document.getElementById('previewName').textContent = fullName;
-                document.getElementById('backName').textContent = fullName;
-                document.getElementById('backDob').textContent = formatDate(dob);
-                document.getElementById('backAge').textContent = age;
-                document.getElementById('backCountry').textContent = country;
-                document.getElementById('backPin').textContent = pin;
-                document.getElementById('barcodeContainer').innerHTML = barcodeSvg;
-            });
-            
-            // Save card functionality
-            saveBtn.addEventListener('click', function() {
-                const fullName = document.getElementById('fullName').value;
-                
-                if (!fullName) {
-                    alert('Please generate a card first by filling the form and clicking "Generate Membership Card"');
-                    return;
-                }
-                
-                // Get the current barcode SVG
-                const barcodeSvg = document.getElementById('barcodeContainer').innerHTML;
-                
-                // Create HTML content for the saved card
-                const cardHTML = `
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>William Levy Fan Membership Card - ${fullName}</title>
-                    <style>
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        }
-                        
-                        body {
-                            background: #f5f5f5;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            min-height: 100vh;
-                            padding: 20px;
-                        }
-                        
-                        .card-container {
-                            width: 350px;
-                            height: 500px;
-                            perspective: 1000px;
-                        }
-                        
-                        .card {
-                            width: 100%;
-                            height: 100%;
-                            position: relative;
-                            transform-style: preserve-3d;
-                            transition: transform 0.8s;
-                            cursor: pointer;
-                            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-                            border-radius: 15px;
-                        }
-                        
-                        .card.flipped {
-                            transform: rotateY(180deg);
-                        }
-                        
-                        .card-front, .card-back {
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            backface-visibility: hidden;
-                            border-radius: 15px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            overflow: hidden;
-                        }
-                        
-                        .card-front {
-                            background: linear-gradient(135deg, #0c2461, #1e3799, #4a69bd);
-                            color: white;
-                            padding: 30px;
-                            text-align: center;
-                        }
-                        
-                        .card-back {
-                            background: white;
-                            color: #333;
-                            transform: rotateY(180deg);
-                            padding: 25px;
-                        }
-                        
-                        .card-header {
-                            text-align: center;
-                            margin-bottom: 20px;
-                        }
-                        
-                        .card-title {
-                            font-size: 28px;
-                            font-weight: bold;
-                            margin-bottom: 5px;
-                        }
-                        
-                        .card-subtitle {
-                            font-size: 18px;
-                            opacity: 0.9;
-                        }
-                        
-                        .card-body {
-                            flex-grow: 1;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                        }
-                        
-                        .member-photo {
-                            width: 150px;
-                            height: 150px;
-                            border-radius: 50%;
-                            margin: 0 auto 20px;
-                            background: rgba(255, 255, 255, 0.2);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 50px;
-                            border: 3px solid white;
-                            overflow: hidden;
-                        }
-                        
-                        .member-photo img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                        
-                        .member-name {
-                            font-size: 24px;
-                            margin-bottom: 10px;
-                            font-weight: bold;
-                        }
-                        
-                        .member-info {
-                            font-size: 16px;
-                            margin-bottom: 8px;
-                            display: flex;
-                            justify-content: space-between;
-                        }
-                        
-                        .info-label {
-                            font-weight: bold;
-                            color: #1a2a6c;
-                        }
-                        
-                        .barcode {
-                            height: 80px;
-                            background: #f5f5f5;
-                            margin: 20px 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 5px;
-                            overflow: hidden;
-                        }
-                        
-                        .barcode svg {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        
-                        .signature {
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 20px;
-                            padding-top: 15px;
-                            border-top: 1px solid #eee;
-                        }
-                        
-                        .signature-item {
-                            text-align: center;
-                            width: 45%;
-                        }
-                        
-                        .signature-rect {
-                            height: 60px;
-                            background: white;
-                            margin-bottom: 5px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            overflow: hidden;
-                        }
-                        
-                        .signature-rect img {
-                            max-width: 100%;
-                            max-height: 100%;
-                            object-fit: contain;
-                        }
-                        
-                        .tap-hint {
-                            text-align: center;
-                            margin: 10px 0;
-                            font-style: italic;
-                            color: #333;
-                            background: rgba(0, 0, 0, 0.1);
-                            padding: 8px;
-                            border-radius: 5px;
-                            width: 100%;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="card-container">
-                        <div class="card" id="membershipCard">
-                            <div class="card-front">
-                                <div class="card-header">
-                                    <div class="card-title">WILLIAM LEVY</div>
-                                    <div class="card-subtitle">Official Fan Club</div>
-                                </div>
-                                
-                                <div class="card-body">
-                                    <div class="member-photo">${document.getElementById('previewPhoto').innerHTML}</div>
-                                    <div class="member-name">${document.getElementById('previewName').textContent}</div>
-                                </div>
-                            </div>
-                            
-                            <div class="card-back">
-                                <div class="card-header">
-                                    <div class="card-title">MEMBERSHIP CARD</div>
-                                </div>
-                                
-                                <div class="card-body">
-                                    <div class="member-info">
-                                        <span class="info-label">Full Name:</span>
-                                        <span>${document.getElementById('backName').textContent}</span>
-                                    </div>
-                                    
-                                    <div class="member-info">
-                                        <span class="info-label">Date of Birth:</span>
-                                        <span>${document.getElementById('backDob').textContent}</span>
-                                    </div>
-                                    
-                                    <div class="member-info">
-                                        <span class="info-label">Age:</span>
-                                        <span>${document.getElementById('backAge').textContent}</span>
-                                    </div>
-                                    
-                                    <div class="member-info">
-                                        <span class="info-label">Country:</span>
-                                        <span>${document.getElementById('backCountry').textContent}</span>
-                                    </div>
-                                    
-                                    <div class="member-info">
-                                        <span class="info-label">Card PIN:</span>
-                                        <span>${document.getElementById('backPin').textContent}</span>
-                                    </div>
-                                    
-                                    <div class="barcode">
-                                        ${barcodeSvg}
-                                    </div>
-                                    
-                                    <div class="signature">
-                                        <div class="signature-item">
-                                            <div>William Levy</div>
-                                            <div class="signature-rect">${document.getElementById('williamSignaturePreview').innerHTML}</div>
-                                            <div style="font-size: 12px;">Signature</div>
-                                        </div>
-                                        <div class="signature-item">
-                                            <div>Management</div>
-                                            <div class="signature-rect">${document.getElementById('managementSignaturePreview').innerHTML}</div>
-                                            <div style="font-size: 12px;">Signature</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tap-hint">Tap the card to flip and view the back</div>
-                    
-                    <script>
-                        document.getElementById('membershipCard').addEventListener('click', function() {
-                            this.classList.toggle('flipped');
-                        });
-                    <\/script>
-                </body>
-                </html>
-                `;
-                
-                // Create and download the file
-                const blob = new Blob([cardHTML], { type: 'text/html' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `William_Levy_Membership_Card_${fullName.replace(/\s+/g, '_')}.html`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            });
-            
-            // Helper function to format date
-            function formatDate(dateString) {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+            }
+        });
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.style.display = 'none';
                 });
             }
+        }
+
+        // Membership selection
+        function selectMembership(element) {
+            const options = element.parentElement.querySelectorAll('.membership-option');
+            options.forEach(option => option.classList.remove('selected'));
             
-            // Helper function to generate a random PIN
-            function generatePIN() {
-                return Math.random().toString(36).substring(2, 6).toUpperCase() + 
-                       '-' + 
-                       Math.random().toString(36).substring(2, 6).toUpperCase();
+            element.classList.add('selected');
+            
+            // Set the corresponding radio button as checked
+            const radioButton = element.querySelector('input[type="radio"]');
+            if (radioButton) {
+                radioButton.checked = true;
+            }
+        }
+
+        // Meet & Greet package selection
+        function selectMeetPackage(element, packageType) {
+            const options = element.parentElement.querySelectorAll('.membership-option');
+            options.forEach(option => option.classList.remove('selected'));
+            
+            element.classList.add('selected');
+            
+            // Set the corresponding radio button as checked
+            const radioButton = element.querySelector('input[type="radio"]');
+            if (radioButton) {
+                radioButton.checked = true;
+            }
+        }
+
+        // Advanced input validation
+        function validateName(name) {
+            const nameRegex = /^[a-zA-Z\s]{2,100}$/;
+            return nameRegex.test(name.trim());
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePhone(phone) {
+            if (!phone) return true; // Phone is optional
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+        }
+
+        // Rate limiting implementation
+        const submissionLimits = {
+            contact: { count: 0, lastSubmission: 0 },
+            membership: { count: 0, lastSubmission: 0 },
+            meet: { count: 0, lastSubmission: 0 }
+        };
+
+        function checkRateLimit(formType) {
+            const now = Date.now();
+            const limit = submissionLimits[formType];
+            
+            // Reset count if more than 1 hour has passed
+            if (now - limit.lastSubmission > 3600000) {
+                limit.count = 0;
             }
             
-            // Helper function to generate a simple barcode
-            function generateBarcode(pin) {
-                // Create a simple barcode pattern based on the PIN
-                const encodedPin = encodePIN(pin);
-                let bars = '';
-                
-                for (let i = 0; i < encodedPin.length; i++) {
-                    const barWidth = parseInt(encodedPin[i]) + 1;
-                    bars += `<rect x="${i * 10}" y="0" width="${barWidth}" height="80" fill="#000" />`;
-                }
-                
-                return `<svg viewBox="0 0 ${encodedPin.length * 10} 80" xmlns="http://www.w3.org/2000/svg">${bars}</svg>`;
+            // Allow maximum 3 submissions per hour
+            if (limit.count >= 3) {
+                showNotification('Too many submissions. Please try again later.', 'error');
+                return false;
             }
             
-            // Helper function to encode PIN for barcode
-            function encodePIN(pin) {
-                // Simple encoding - convert each character to a number and take modulo 5
-                let encoded = '';
-                for (let i = 0; i < pin.length; i++) {
-                    const charCode = pin.charCodeAt(i);
-                    encoded += (charCode % 5).toString();
+            limit.count++;
+            limit.lastSubmission = now;
+            return true;
+        }
+
+        // Formspree form handling with enhanced security
+        function handleFormspreeSubmission(form, successMessageId, formspreeStatusId, formType) {
+            // Check rate limiting
+            if (!checkRateLimit(formType)) {
+                return false;
+            }
+
+            // Validate honeypot fields
+            const honeypotFields = form.querySelectorAll('input[type="text"][style*="display: none"]');
+            for (const field of honeypotFields) {
+                if (field.value) {
+                    // Likely a bot submission
+                    showNotification('Submission rejected. Please contact support if this is an error.', 'error');
+                    return false;
                 }
-                return encoded;
+            }
+
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            
+            // Hide any previous status messages
+            document.getElementById(formspreeStatusId).style.display = 'none';
+            
+            // Use Formspree's built-in submission
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById(successMessageId).style.display = 'block';
+                    document.getElementById(formspreeStatusId).className = 'formspree-status success';
+                    document.getElementById(formspreeStatusId).textContent = 'Request submitted successfully!';
+                    document.getElementById(formspreeStatusId).style.display = 'block';
+                    
+                    // Show admin notification
+                    showNotification('New request submitted! Check your email for details.');
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Close modal after 10 seconds
+                    setTimeout(() => {
+                        const modal = form.closest('.modal');
+                        if (modal) {
+                            closeModal(modal.id);
+                        }
+                    }, 10000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            document.getElementById(formspreeStatusId).className = 'formspree-status error';
+                            document.getElementById(formspreeStatusId).textContent = data.errors.map(error => error.message).join(', ');
+                            document.getElementById(formspreeStatusId).style.display = 'block';
+                        } else {
+                            document.getElementById(formspreeStatusId).className = 'formspree-status error';
+                            document.getElementById(formspreeStatusId).textContent = 'There was an error submitting your request. Please try again.';
+                            document.getElementById(formspreeStatusId).style.display = 'block';
+                        }
+                    });
+                }
+            }).catch(error => {
+                document.getElementById(formspreeStatusId).className = 'formspree-status error';
+                document.getElementById(formspreeStatusId).textContent = 'There was an error submitting your request. Please try again.';
+                document.getElementById(formspreeStatusId).style.display = 'block';
+            }).finally(() => {
+                // Reset button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+            
+            // Prevent default form submission
+            return false;
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = type === 'error' ? 'notification error' : 'notification';
+            notification.style.display = 'block';
+            
+            // Hide notification after 15 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 15000);
+        }
+
+        // Real-time form validation
+        function setupFormValidation(form) {
+            const inputs = form.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    // Clear error when user starts typing
+                    if (this.classList.contains('error')) {
+                        this.classList.remove('error');
+                        const errorElement = this.nextElementSibling;
+                        if (errorElement && errorElement.classList.contains('error-message')) {
+                            errorElement.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+
+        // Validate a single field
+        function validateField(field) {
+            let isValid = true;
+            let errorMessage = '';
+            
+            switch (field.type) {
+                case 'text':
+                    if (field.name.includes('name') || field.id.includes('Name')) {
+                        isValid = validateName(field.value);
+                        errorMessage = 'Please enter a valid name (letters and spaces only, 2-100 characters)';
+                    }
+                    break;
+                case 'email':
+                    isValid = validateEmail(field.value);
+                    errorMessage = 'Please enter a valid email address';
+                    break;
+                case 'tel':
+                    isValid = validatePhone(field.value);
+                    errorMessage = 'Please enter a valid phone number';
+                    break;
+                case 'textarea':
+                    isValid = field.value.length <= 1000;
+                    errorMessage = 'Message must be less than 1000 characters';
+                    break;
+            }
+            
+            if (!isValid && field.value) {
+                field.classList.add('error');
+                const errorElement = field.nextElementSibling;
+                if (errorElement && errorElement.classList.contains('error-message')) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.style.display = 'block';
+                }
+            } else {
+                field.classList.remove('error');
+                const errorElement = field.nextElementSibling;
+                if (errorElement && errorElement.classList.contains('error-message')) {
+                    errorElement.style.display = 'none';
+                }
+            }
+            
+            return isValid;
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let allValid = true;
+            const fields = this.querySelectorAll('input, textarea');
+            fields.forEach(field => {
+                if (!validateField(field) && field.required) {
+                    allValid = false;
+                }
+            });
+            
+            if (allValid) {
+                handleFormspreeSubmission(this, 'successMessage', 'formspreeStatus', 'contact');
+            }
+        });
+
+        // Membership form submission
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let allValid = true;
+            const fields = this.querySelectorAll('input, textarea, select');
+            fields.forEach(field => {
+                if (!validateField(field) && field.required) {
+                    allValid = false;
+                }
+            });
+            
+            if (allValid) {
+                handleFormspreeSubmission(this, 'membershipSuccessMessage', 'membershipFormspreeStatus', 'membership');
+            }
+        });
+
+        // Meet & Greet form submission
+        document.getElementById('meetForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let allValid = true;
+            const fields = this.querySelectorAll('input, textarea, select');
+            fields.forEach(field => {
+                if (!validateField(field) && field.required) {
+                    allValid = false;
+                }
+            });
+            
+            if (allValid) {
+                handleFormspreeSubmission(this, 'meetSuccessMessage', 'meetFormspreeStatus', 'meet');
+            }
+        });
+
+		// Live Chat Widget Functionality
+        const chatBtn = document.getElementById('chatWidgetButton');
+        const chatBox = document.getElementById('chatWidgetBox');
+        const chatClose = document.getElementById('chatWidgetClose');
+        const chatMessages = document.getElementById('chatWidgetMessages');
+        const chatInput = document.getElementById('chatWidgetInput');
+        const chatSend = document.getElementById('chatWidgetSend');
+
+        // Open/close chat
+        chatBtn.addEventListener('click', () => {
+            chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
+        });
+        chatClose.addEventListener('click', () => {
+            chatBox.style.display = 'none';
+        });
+
+        // Send message on button click
+        chatSend.addEventListener('click', sendMessage);
+
+        // Send message on Enter key
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Quick question click
+        chatMessages.addEventListener('click', function(e) {
+            if (e.target.classList.contains('chat-widget-quick-question')) {
+                sendQuickQuestion(e.target.dataset.question);
+            }
+        });
+
+        // Send quick question
+        function sendQuickQuestion(question) {
+            addMessage(question, 'user');
+            setTimeout(() => {
+                let response = "Our support team will contact you shortly.";
+                if (question.includes('membership')) {
+                    response = "For membership issues, please ensure your details are correct. Would you like to speak with a support agent?";
+                } else if (question.includes('Meet & Greet')) {
+                 response = "For Meet & Greet, please check your email for confirmation. Need more help?";
+                }
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        // Send message function
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+            addMessage(message, 'user');
+            chatInput.value = '';
+            setTimeout(() => {
+                const responses = [
+                    "Thank you for reaching out! We'll get back to you soon.",
+                    "Our team will reply as soon as possible.",
+                    "Thanks for your message. We're on it!",
+                    "We appreciate your patience. Our support team will be with you shortly."
+                ];
+                addMessage(responses[Math.floor(Math.random() * responses.length)], 'bot');
+            }, 1000);
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const msg = document.createElement('div');
+            msg.className = 'chat-widget-message ' + (sender === 'user' ? 'user' : 'bot');
+            msg.textContent = text;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+		}
+
+		// Accessibility: Close chat on Esc key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') chatBox.style.display = 'none';
+        });
+
+        // Initialize form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            setupFormValidation(document.getElementById('contactForm'));
+            setupFormValidation(document.getElementById('membershipForm'));
+            setupFormValidation(document.getElementById('meetForm'));
+        });
+
+        // Security: Monitor for suspicious activity
+        let suspiciousActivityCount = 0;
+        window.addEventListener('error', function(e) {
+            suspiciousActivityCount++;
+            if (suspiciousActivityCount > 10) {
+                // Too many errors, possible attack
+                document.body.innerHTML = '<h1>Security Alert</h1><p>Unusual activity detected. Please refresh the page.</p>';
             }
         });
     </script>
